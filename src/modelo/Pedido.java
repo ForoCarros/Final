@@ -1,9 +1,10 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class Pedido {
+public class Pedido implements Serializable{
 	private ArrayList<LineaPedido> lineas;
 	private Cliente cliente;
 	private double total;
@@ -39,5 +40,6 @@ public class Pedido {
 	public GregorianCalendar getFecha() {
 		return fecha;
 	}
+
 
 }
