@@ -37,7 +37,7 @@ public class Logica {
 	public Object obtener() {
 		// seria algo asi mas o menos...
 		// dao = new DAO();
-		// return dao.leer(tipo.getRuta(), tipo.isLista());
+		// return dao.leer(ruta....);
 		return true;
 	}
 
