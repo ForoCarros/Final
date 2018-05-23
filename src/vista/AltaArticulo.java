@@ -12,8 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 public class AltaArticulo extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
+	protected JTextField textField;
+	protected JTextField textField_1;
 
 	/**
 	 * Create the panel.
