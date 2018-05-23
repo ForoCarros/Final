@@ -13,7 +13,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JButton;
 
-public class BorrarCliente extends JPanel {
+public class BajaCliente extends JPanel {
 	protected JTextField txtMensajeBorrar;
 	protected JComboBox comboClientes;
 	protected JButton btnEliminar;
@@ -21,7 +21,7 @@ public class BorrarCliente extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public BorrarCliente() {
+	public BajaCliente() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
