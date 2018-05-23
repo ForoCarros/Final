@@ -15,13 +15,13 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 
 public class AltaPedido extends JPanel {
-	private JTextField txtNumPedido;
-	private JComboBox comboPedido;
-	private JComboBox comboArticulos;
-	private JTextArea txtLineasPedido;
-	private JTextField txtPrecioFinal;
-	private JTextField txtMensajePedido;
-	private JTextField txtCantidad;
+	protected JTextField txtNumPedido;
+	protected JComboBox comboPedido;
+	protected JComboBox comboArticulos;
+	protected JTextArea txtLineasPedido;
+	protected JTextField txtPrecioFinal;
+	protected JTextField txtMensajePedido;
+	protected JTextField txtCantidad;
 
 	/**
 	 * Create the panel.
