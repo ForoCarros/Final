@@ -57,9 +57,13 @@ public class UI extends JFrame {
 		menuBar.add(mnCliente);
 
 		JMenuItem mntmAltaCliente = new JMenuItem("Alta");
+		mntmAltaCliente.setActionCommand("AltaCliente");
+		mntmAltaCliente.setName("AltaCliente");
 		mnCliente.add(mntmAltaCliente);
 
 		JMenuItem mntmBajaCliente = new JMenuItem("Baja");
+		mntmBajaCliente.setActionCommand("BajaCliente");
+		mntmBajaCliente.setName("BajaCliente");
 		mnCliente.add(mntmBajaCliente);
 
 		JMenu mnPedido = new JMenu("Pedido");
@@ -67,12 +71,15 @@ public class UI extends JFrame {
 
 		JMenuItem mntmAltaPedido = new JMenuItem("Alta");
 		mnPedido.add(mntmAltaPedido);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		mntmAltaArticulo.addActionListener(e -> crearVentana(e.getActionCommand()));
+		mntmAltaCliente.addActionListener(e -> crearVentana(e.getActionCommand()));
+		mntmBajaCliente.addActionListener(e -> crearVentana(e.getActionCommand()));
 	}
 
 	private void crearVentana(String clase) {
