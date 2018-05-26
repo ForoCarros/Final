@@ -1,5 +1,7 @@
-package altas;
+package acciones;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import control.ParaUI;
@@ -14,7 +16,7 @@ import modelo.Pedido;
  * @author Fernan
  *
  */
-public class Altas {
+public class Altas implements ActionListener{
 
 	private ParaUI paraui;
 
@@ -85,5 +87,11 @@ public class Altas {
 		Pedido pedido = new Pedido(lineas, cliente, total, numeroPedido, null);
 		Logica logica = new Logica();
 		return logica.grabar(pedido);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

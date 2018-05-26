@@ -1,4 +1,4 @@
-package altas;
+package acciones;
 
 import control.ParaUI;
 
