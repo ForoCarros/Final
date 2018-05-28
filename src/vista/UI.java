@@ -17,7 +17,6 @@ import javax.swing.JMenuItem;
 
 public class UI extends JFrame {
 
-	protected JPanel contentPane;
 	private BufferedImage img;
 	protected JMenuItem mntmAltaArticulo;
 	protected JMenuItem mntmConsultaArticulo;
@@ -25,6 +24,7 @@ public class UI extends JFrame {
 	protected JMenuItem mntmAltaCliente;
 	protected JMenuItem mntmBajaCliente;
 	protected JMenuItem mntmAltaPedido;
+	protected JPanelBackground contentPane;
 
 	/**
 	 * Create the frame.
@@ -78,12 +78,10 @@ public class UI extends JFrame {
 		mntmAltaPedido = new JMenuItem("Alta");
 		mnPedido.add(mntmAltaPedido);
 
-		JPanelBackground contentPane = new JPanelBackground();
+		contentPane = new JPanelBackground();
 		contentPane.setBackground("src/assets/ESTEEM.png");
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
 	}
-
 }
