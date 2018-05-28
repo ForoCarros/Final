@@ -15,9 +15,10 @@ import modelo.Pedido;
  * @author Fernan
  *
  */
-public class Altas{
+public class Altas {
 
 	private ParaUI paraui;
+	private Logica logica;
 
 	public Altas(ParaUI paraui) {
 		super();
@@ -25,20 +26,18 @@ public class Altas{
 	}
 
 	/**
+	 * Crea el articulo en la lista y lo graba en el fichero especifico
 	 * 
-	 * @param id
+	 * @param idArticulo
 	 * @param nombre
 	 * @param descripcion
-	 * @param la
-	 *            serie historica va aqui tambien?? o deberia ser un boolean para
-	 *            ver si esta o no??
+	 * @param precio
 	 * @return
 	 */
-
 	public boolean crearArticulo(int idArticulo, String nombre, String descripcion, float precio) {
 		Articulo articulo = new Articulo(idArticulo, nombre, descripcion, precio);
-		Logica logica = new Logica();
-		ArrayList listaArticulo = (ArrayList) logica.obtener();
+		logica = new Logica();
+		ArrayList listaArticulo = (ArrayList) logica.dameRuta("articulo.txt");
 		if (listaArticulo == null)
 			listaArticulo = new ArrayList<>();
 		if (!listaArticulo.contains(articulo)) {
@@ -49,7 +48,7 @@ public class Altas{
 	}
 
 	/**
-	 * Crea el cliente en la lista y lo graba en el fichero
+	 * Crea el cliente en la lista y lo graba en el fichero especifico
 	 * 
 	 * @param razonSocial
 	 * @param dni
@@ -59,8 +58,8 @@ public class Altas{
 	 */
 	public boolean crearCliente(String razonSocial, String dni, String direccion, String telefono) {
 		Cliente cliente = new Cliente(razonSocial, dni, direccion, telefono);
-		Logica logica = new Logica();
-		ArrayList listacliente = (ArrayList) logica.obtener();
+		logica = new Logica();
+		ArrayList listacliente = (ArrayList) logica.dameRuta("cliente.txt");
 		if (listacliente == null)
 			listacliente = new ArrayList();
 		if (!listacliente.contains(cliente)) {
@@ -74,13 +73,15 @@ public class Altas{
 	 * Crea el pedido sin necesidad de comprobar nada, los clientes hacen pedidos y
 	 * nos da igual si son iguales
 	 * 
+	 * No se si esto tambien hay que guardarlo en una lista de pedidos....
+	 * 
 	 * @param cliente
 	 * @param numeroPedido
 	 * @return true o false
 	 */
 	public boolean crearPedido(int numeroPedido, Cliente cliente) {
 		Pedido pedido = new Pedido(numeroPedido, cliente);
-		Logica logica = new Logica();
+		logica = new Logica();
 		return logica.grabar(pedido);
 	}
 
