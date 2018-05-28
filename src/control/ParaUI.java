@@ -1,6 +1,6 @@
 package control;
 
-import acciones.Altas;
+import logica.Altas;
 import logica.Logica;
 import utiles.Validador;
 import vista.UI;

@@ -1,23 +1,70 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+import java.util.LinkedList;
 
-public class Articulo implements Comparable<Articulo>, Serializable {
-	private int id;
-	private String nombre, descripcion;
-	private ArrayList<Float> serieHistorica;
+public class Articulo implements Serializable {
 
-	public Articulo(int id, String nombre, String descripcion, ArrayList<Float> serieHistorica) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.serieHistorica = serieHistorica;
+	private int idArticulo;
+	private String nombre;
+	private String descripcion;
+	private Proveedor proveedor;
+	private LinkedList<Precio> precios;
+
+	public Articulo(int idArticulo, String nombre, String descripcion, float precio, Proveedor proveedor) {
+		this(idArticulo, nombre, descripcion, precio);
+		this.proveedor = proveedor;
 	}
 
-	public int getId() {
-		return id;
+	public Articulo(int idArticulo, String nombre, String descripcion, float precio) {
+		super();
+		this.idArticulo = idArticulo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		precios = new LinkedList<>();
+		precios.add(new Precio(precio, false));
+	}
+
+	public float getOldPrice(GregorianCalendar instant) {
+		Iterator<Precio> iterator = precios.iterator();
+		boolean encontrado = false;
+		float precio = 0;
+		while (iterator.hasNext() && !encontrado) {
+			Precio next = iterator.next();
+			if (next.isInToPeriod(instant)) {
+				encontrado = true;
+				precio = next.getPrecio();
+			}
+			;
+		}
+		return precio;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Articulo elemento=(Articulo)obj;
+		boolean retorno=super.equals(elemento);
+		if(!retorno){
+			retorno=idArticulo==elemento.getIdArticulo();
+		}
+		return retorno;
+	}
+	public void insertarNuevoPrecio(float nuevoPrecio, boolean oferta) {
+		assert nuevoPrecio > 0;
+		precios.getLast().setFechaFinal();
+		precios.addLast(new Precio(nuevoPrecio, oferta));
+	}
+
+	public float getCurrentPrice() {
+		return precios.getLast().getPrecio();
+	}
+
+	public int getIdArticulo() {
+		return idArticulo;
 	}
 
 	public String getNombre() {
@@ -28,36 +75,8 @@ public class Articulo implements Comparable<Articulo>, Serializable {
 		return descripcion;
 	}
 
-	public ArrayList<Float> getSerieHistorica() {
-		return serieHistorica;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj instanceof Articulo) {
-			return this.nombre.equals(((Articulo) obj).getNombre());
-		}
-		return false;
-	}
-
-	@Override
-	public int hashCode() {
-		int hasCode = 1;
-		hasCode = 31 * hasCode + nombre.hashCode();
-		return hasCode;
-	}
-
-	@Override
-	public String toString() {
-		return "Nombre articulo es : " + nombre;
-	}
-
-	@Override
-	public int compareTo(Articulo o) {
-		return this.nombre.compareTo(o.getNombre());
+	public Proveedor getProveedor() {
+		return proveedor;
 	}
 
 }
