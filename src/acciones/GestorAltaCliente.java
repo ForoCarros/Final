@@ -21,7 +21,13 @@ public class GestorAltaCliente implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.paraUI.crearJInternalFrame(e.getActionCommand());
-		assert this.paraUI.getValidador.comprobarVacio(txtRazon.getText())==true : "razon vacia";
+		
+		assert !(this.paraUI.getValidador().comprobarVacio(txtRazon.getText())==true) : "razon vacia";
+		assert !(this.paraUI.getValidador().comprobarVacio(txtNif.getText())==true) : "nif vacia";
+		assert !(this.paraUI.getValidador().comprobarVacio(txtDireccion.getText())==true) : "direccion vacia";
+		assert !(this.paraUI.getValidador().comprobarVacio(txtTelefono.getText())==true) : "telefono vacia";
+		assert !(this.paraUI.getValidador().comprobarTelefono(txtTelefono.getText())==true) : "telefono erroneo";
+		assert !(this.paraUI.getValidador().comprobarNif(txtNif.getText())==true) : "nif erroneo";
 		
 		if (this.paraUI.getAltas().crearCliente(txtRazon.getText(), txtNif.getText(), txtDireccion.getText(),
 				txtTelefono.getText())) {
