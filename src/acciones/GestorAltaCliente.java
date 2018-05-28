@@ -21,5 +21,13 @@ public class GestorAltaCliente implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.paraUI.crearJInternalFrame(e.getActionCommand());
+		assert this.paraUI.getValidador.comprobarVacio(txtRazon.getText())==true : "razon vacia";
+		
+		if (this.paraUI.getAltas().crearCliente(txtRazon.getText(), txtNif.getText(), txtDireccion.getText(),
+				txtTelefono.getText())) {
+			txtMensajeAltaCliente.setText("cliente creado");
+		} else {
+			txtMensajeAltaCliente.setText("ERROR");
+		}
 	}
 }
