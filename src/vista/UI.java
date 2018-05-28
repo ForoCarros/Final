@@ -71,10 +71,13 @@ public class UI extends JFrame {
 
 		JMenuItem mntmAltaPedido = new JMenuItem("Alta");
 		mnPedido.add(mntmAltaPedido);
-		
-		contentPane = new JPanel();
+
+		JPanelBackground contentPane = new JPanelBackground();
+		contentPane.setBackground("src/assets/ESTEEM.png");
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
 	}
+
 }
