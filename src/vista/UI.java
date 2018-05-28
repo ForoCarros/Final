@@ -71,39 +71,13 @@ public class UI extends JFrame {
 
 		JMenuItem mntmAltaPedido = new JMenuItem("Alta");
 		mnPedido.add(mntmAltaPedido);
-		
-		contentPane = new JPanel();
+
+		JPanelBackground contentPane = new JPanelBackground();
+		contentPane.setBackground("C:/Users/Adsan/git/Final/src/assets/ESTEEM.png");
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		mntmAltaArticulo.addActionListener(e -> crearVentana(e.getActionCommand()));
-		mntmAltaCliente.addActionListener(e -> crearVentana(e.getActionCommand()));
-		mntmBajaCliente.addActionListener(e -> crearVentana(e.getActionCommand()));
 	}
 
-	private void crearVentana(String clase) {
-		JInternalFrame frame = new JInternalFrame("Alta artículo", false, true, false);
-		Class<?> cls = null;
-		try {
-			cls = Class.forName("vista." + clase);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Object pane = null;
-		try {
-			pane = cls.newInstance();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		frame.getContentPane().add((Component) pane);
-		frame.setVisible(true);
-		frame.pack();
-		contentPane.add(frame);
-	}
 }
