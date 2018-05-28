@@ -29,6 +29,10 @@ public class GestorAltaCliente implements ActionListener {
 		assert !(this.paraUI.getValidador().comprobarTelefono(txtTelefono.getText()) == true) : "telefono erroneo";
 		assert !(this.paraUI.getValidador().comprobarNif(txtNif.getText()) == true) : "nif erroneo";
 
+		/**
+		 * Los botones como los añadimos??
+		 */
+		
 		if (this.paraUI.getAltas().crearCliente(txtRazon.getText(), txtNif.getText(), txtDireccion.getText(),
 				txtTelefono.getText())) {
 			txtMensajeAltaCliente.setText("cliente creado");
