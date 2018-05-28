@@ -34,6 +34,18 @@ public class ParaUI extends UI {
 		asignarListener();
 	}
 
+	public Altas getAltas() {
+		return altas;
+	}
+
+	public Logica getLogica() {
+		return logica;
+	}
+
+	public Validador getValidador() {
+		return validador;
+	}
+
 	/**
 	 * Asigna los listener a cada boton
 	 */
