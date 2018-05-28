@@ -32,7 +32,6 @@ public class ParaUI extends UI {
 		super();
 		this.altas = new Altas(this);
 		asignarListener();
-		this.mntmAltaArticulo.addActionListener(listenerAltaArticulo);
 	}
 
 	/**
@@ -45,6 +44,12 @@ public class ParaUI extends UI {
 		this.listenerAltaCliente = new GestorAltaCliente(this);
 		this.listenerBajaCliente = new GestorDeleteCliente(this);
 		this.listenerAltaPedido = new GestorAltaPedido(this);
+		this.mntmAltaArticulo.addActionListener(this.listenerAltaArticulo);
+		this.mntmConsultaArticulo.addActionListener(this.listenerConsultarArticulo);
+		this.mntmModificacinArticulo.addActionListener(this.listenerModificarArticulo);
+		this.mntmAltaCliente.addActionListener(this.listenerAltaCliente);
+		this.mntmBajaCliente.addActionListener(this.listenerBajaCliente);
+		this.mntmAltaPedido.addActionListener(this.listenerAltaPedido);
 	}
 
 	public void crearJInternalFrame(String clase) {
@@ -58,7 +63,7 @@ public class ParaUI extends UI {
 		Object pane = null;
 		try {
 			pane = cls.newInstance();
-			JInternalFrame frame = new JInternalFrame(clase + ".", false, true, false);
+			JInternalFrame frame = new JInternalFrame(clase + ".", true, true, true);
 			frame.getContentPane().add((Component) pane);
 			frame.setVisible(true);
 			frame.pack();
