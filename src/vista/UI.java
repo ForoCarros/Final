@@ -54,9 +54,11 @@ public class UI extends JFrame {
 		mnArtculo.add(mntmAltaArticulo);
 
 		mntmConsultaArticulo = new JMenuItem("Consulta");
+		mntmConsultaArticulo.setActionCommand("ConsultarArticulo");
 		mnArtculo.add(mntmConsultaArticulo);
 
 		mntmModificacinArticulo = new JMenuItem("Modificaci\u00F3n");
+		mntmModificacinArticulo.setActionCommand("ModificarArticulo");
 		mnArtculo.add(mntmModificacinArticulo);
 
 		JMenu mnCliente = new JMenu("Cliente");
@@ -73,9 +75,11 @@ public class UI extends JFrame {
 		mnCliente.add(mntmBajaCliente);
 
 		JMenu mnPedido = new JMenu("Pedido");
+		mnPedido.setActionCommand("AltaPedido");
 		menuBar.add(mnPedido);
 
 		mntmAltaPedido = new JMenuItem("Alta");
+		mntmAltaPedido.setActionCommand("AltaPedido");
 		mnPedido.add(mntmAltaPedido);
 
 		contentPane = new JPanelBackground();
