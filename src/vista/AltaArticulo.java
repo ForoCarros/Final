@@ -14,6 +14,7 @@ import java.awt.Font;
 public class AltaArticulo extends JPanel {
 	protected JTextField textField;
 	protected JTextField textField_1;
+	protected JButton btnAceptar;
 
 	/**
 	 * Create the panel.
@@ -70,7 +71,7 @@ public class AltaArticulo extends JPanel {
 		add(textField_1, gbc_textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar = new JButton("Aceptar");
 		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
 		gbc_btnAceptar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAceptar.gridx = 4;
