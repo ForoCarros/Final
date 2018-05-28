@@ -1,11 +1,10 @@
-package acciones;
+package logica;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import control.ParaUI;
-import logica.Logica;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Linea;
@@ -16,7 +15,7 @@ import modelo.Pedido;
  * @author Fernan
  *
  */
-public class Altas implements ActionListener{
+public class Altas{
 
 	private ParaUI paraui;
 
@@ -37,7 +36,7 @@ public class Altas implements ActionListener{
 	 */
 
 	public boolean crearArticulo(int id, String nombre, String descripcion) {
-		Articulo articulo = new Articulo(id, nombre, descripcion, null);
+		Articulo articulo = new Articulo(id, nombre, descripcion, id, null);
 		Logica logica = new Logica();
 		ArrayList listaArticulo = (ArrayList) logica.obtener();
 		if (listaArticulo == null)
@@ -84,14 +83,9 @@ public class Altas implements ActionListener{
 	 * @return
 	 */
 	public boolean crearPedido(ArrayList<Linea> lineas, Cliente cliente, double total, int numeroPedido) {
-		Pedido pedido = new Pedido(lineas, cliente, total, numeroPedido, null);
+		Pedido pedido = new Pedido(numeroPedido, null);
 		Logica logica = new Logica();
 		return logica.grabar(pedido);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 }
