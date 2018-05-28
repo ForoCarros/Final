@@ -3,6 +3,13 @@ package control;
 import java.awt.Component;
 
 import javax.swing.JInternalFrame;
+
+import acciones.GestorAltaArticulo;
+import acciones.GestorAltaCliente;
+import acciones.GestorAltaPedido;
+import acciones.GestorConsultarArticulo;
+import acciones.GestorDeleteCliente;
+import acciones.GestorModificarArticulo;
 import logica.Altas;
 import logica.Logica;
 import utiles.Validador;
@@ -13,21 +20,34 @@ public class ParaUI extends UI {
 	private Altas altas;
 	private Logica logica;
 	private Validador validador;
+	
+	private GestorAltaArticulo listenerAltaArticulo;
+	private GestorConsultarArticulo listenerConsultarArticulo;
+	private GestorModificarArticulo listenerModificarArticulo;
+	private GestorAltaCliente listenerAltaCliente;
+	private GestorDeleteCliente listenerBajaCliente;
+	private GestorAltaPedido listenerAltaPedido;
 
 	public ParaUI() {
 		super();
 		this.altas = new Altas(this);
 		asignarListener();
+		this.mntmAltaArticulo.addActionListener(listenerAltaArticulo);
 	}
 
 	/**
 	 * Asigna los listener a cada boton
 	 */
 	private void asignarListener() {
-		
+		this.listenerAltaArticulo = new GestorAltaArticulo(this);
+		this.listenerConsultarArticulo = new GestorConsultarArticulo(this);
+		this.listenerModificarArticulo = new GestorModificarArticulo(this);
+		this.listenerAltaCliente = new GestorAltaCliente(this);
+		this.listenerBajaCliente = new GestorDeleteCliente(this);
+		this.listenerAltaPedido = new GestorAltaPedido(this);
 	}
 
-	private void crearJInternalFrame(String clase) {
+	public void crearJInternalFrame(String clase) {
 		Class<?> cls = null;
 		try {
 			cls = Class.forName("vista." + clase);
