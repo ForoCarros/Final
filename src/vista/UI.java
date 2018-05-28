@@ -17,8 +17,14 @@ import javax.swing.JMenuItem;
 
 public class UI extends JFrame {
 
-	private JPanel contentPane;
+	protected JPanel contentPane;
 	private BufferedImage img;
+	protected JMenuItem mntmAltaArticulo;
+	protected JMenuItem mntmConsultaArticulo;
+	protected JMenuItem mntmModificacinArticulo;
+	protected JMenuItem mntmAltaCliente;
+	protected JMenuItem mntmBajaCliente;
+	protected JMenuItem mntmAltaPedido;
 
 	/**
 	 * Create the frame.
@@ -42,26 +48,26 @@ public class UI extends JFrame {
 		JMenu mnArtculo = new JMenu("Art\u00EDculo");
 		menuBar.add(mnArtculo);
 
-		JMenuItem mntmAltaArticulo = new JMenuItem("Alta");
+		mntmAltaArticulo = new JMenuItem("Alta");
 		mntmAltaArticulo.setActionCommand("AltaArticulo");
 		mntmAltaArticulo.setName("AltaArticulo");
 		mnArtculo.add(mntmAltaArticulo);
 
-		JMenuItem mntmConsultaArticulo = new JMenuItem("Consulta");
+		mntmConsultaArticulo = new JMenuItem("Consulta");
 		mnArtculo.add(mntmConsultaArticulo);
 
-		JMenuItem mntmModificacinArticulo = new JMenuItem("Modificaci\u00F3n");
+		mntmModificacinArticulo = new JMenuItem("Modificaci\u00F3n");
 		mnArtculo.add(mntmModificacinArticulo);
 
 		JMenu mnCliente = new JMenu("Cliente");
 		menuBar.add(mnCliente);
 
-		JMenuItem mntmAltaCliente = new JMenuItem("Alta");
+		mntmAltaCliente = new JMenuItem("Alta");
 		mntmAltaCliente.setActionCommand("AltaCliente");
 		mntmAltaCliente.setName("AltaCliente");
 		mnCliente.add(mntmAltaCliente);
 
-		JMenuItem mntmBajaCliente = new JMenuItem("Baja");
+		mntmBajaCliente = new JMenuItem("Baja");
 		mntmBajaCliente.setActionCommand("BajaCliente");
 		mntmBajaCliente.setName("BajaCliente");
 		mnCliente.add(mntmBajaCliente);
@@ -69,7 +75,7 @@ public class UI extends JFrame {
 		JMenu mnPedido = new JMenu("Pedido");
 		menuBar.add(mnPedido);
 
-		JMenuItem mntmAltaPedido = new JMenuItem("Alta");
+		mntmAltaPedido = new JMenuItem("Alta");
 		mnPedido.add(mntmAltaPedido);
 
 		JPanelBackground contentPane = new JPanelBackground();
