@@ -73,7 +73,7 @@ public class UI extends JFrame {
 		mnPedido.add(mntmAltaPedido);
 
 		JPanelBackground contentPane = new JPanelBackground();
-		contentPane.setBackground("C:/Users/Adsan/git/Final/src/assets/ESTEEM.png");
+		contentPane.setBackground("src/assets/ESTEEM.png");
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

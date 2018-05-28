@@ -1,65 +1,62 @@
 package modelo;
 
 import java.io.Serializable;
-/**
- * 
- * @author Fernan
- *
- */
-public class Cliente implements Comparable<Cliente>, Serializable {
-	
-	private String razonSocial, dni, direccion, telefono;
 
-	public Cliente(String razonSocial, String dni, String direccion, String telefono) {
+public class Cliente implements Serializable {
+	private String dniCif;
+	private String razonSocial;
+	private String direccion;
+	private String telefono;
+
+	public Cliente(String dniCif, String razonSocial, String direccion, String telefono) {
 		super();
+		this.dniCif = dniCif;
 		this.razonSocial = razonSocial;
-		this.dni = dni;
 		this.direccion = direccion;
 		this.telefono = telefono;
-	}
-
-	public String getRazonSocial() {
-		return razonSocial;
-	}
-
-	public String getDni() {
-		return dni;
 	}
 
 	public String getDireccion() {
 		return direccion;
 	}
 
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
 	public String getTelefono() {
 		return telefono;
 	}
 
-	@Override
-	public int compareTo(Cliente o) {
-		return this.dni.compareTo(o.getDni());
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getDniCif() {
+		return dniCif;
+	}
+
+	public String getRazonSocial() {
+		return razonSocial;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
+		Cliente cliente = (Cliente) obj;
+		boolean retorno = super.equals(obj);
+		if(!retorno){
+			retorno = this.dniCif.equals(cliente.dniCif);
 		}
-		if (obj instanceof Cliente) {
-			return this.dni.equals(((Cliente) obj).getDni());
-		}
-		return false;
+		return retorno;
 	}
 
 	@Override
 	public int hashCode() {
-		int hasCode = 1;
-		hasCode = 31 * hasCode + dni.hashCode();
-		return hasCode;
+		return dniCif.hashCode();
 	}
 
 	@Override
 	public String toString() {
-		return "Nombre:" + razonSocial + " | " + "Nif:" + dni;
+		return razonSocial;
 	}
-
 }

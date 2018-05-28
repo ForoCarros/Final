@@ -1,4 +1,4 @@
-package acciones;
+package logica;
 
 import control.ParaUI;
 
