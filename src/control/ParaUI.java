@@ -38,7 +38,7 @@ public class ParaUI extends UI {
 		Object pane = null;
 		try {
 			pane = cls.newInstance();
-			JInternalFrame frame = new JInternalFrame(clase, false, true, false);
+			JInternalFrame frame = new JInternalFrame(clase + ".", false, true, false);
 			frame.getContentPane().add((Component) pane);
 			frame.setVisible(true);
 			frame.pack();
