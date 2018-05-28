@@ -22,6 +22,8 @@ public class AltaPedido extends JPanel {
 	protected JTextField txtPrecioFinal;
 	protected JTextField txtMensajePedido;
 	protected JTextField txtCantidad;
+	private JButton btnAnadirArticulo;
+	private JButton btnCrearPedido;
 
 	/**
 	 * Create the panel.
@@ -29,9 +31,9 @@ public class AltaPedido extends JPanel {
 	public AltaPedido() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		JLabel lblCrearPedido = new JLabel("CREAR PEDIDO");
@@ -107,7 +109,7 @@ public class AltaPedido extends JPanel {
 		add(txtCantidad, gbc_txtCantidad);
 		txtCantidad.setColumns(10);
 		
-		JButton btnAnadirArticulo = new JButton("A\u00F1adir");
+		btnAnadirArticulo = new JButton("A\u00F1adir");
 		GridBagConstraints gbc_btnAnadirArticulo = new GridBagConstraints();
 		gbc_btnAnadirArticulo.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnAnadirArticulo.gridwidth = 3;
@@ -163,6 +165,13 @@ public class AltaPedido extends JPanel {
 		gbc_txtMensajePedido.gridy = 9;
 		add(txtMensajePedido, gbc_txtMensajePedido);
 		txtMensajePedido.setColumns(10);
+		
+		btnCrearPedido = new JButton("Crear Pedido");
+		GridBagConstraints gbc_btnCrearPedido = new GridBagConstraints();
+		gbc_btnCrearPedido.insets = new Insets(0, 0, 5, 5);
+		gbc_btnCrearPedido.gridx = 2;
+		gbc_btnCrearPedido.gridy = 10;
+		add(btnCrearPedido, gbc_btnCrearPedido);
 
 	}
 

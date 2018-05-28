@@ -18,6 +18,7 @@ public class AltaCliente extends JPanel {
 	protected JTextField txtDireccion;
 	protected JTextField txtTelefono;
 	protected JTextField txtMensajeAltaCliente;
+	protected JButton btnCrearCliente;
 
 	/**
 	 * Create the panel.
@@ -138,7 +139,7 @@ public class AltaCliente extends JPanel {
 		add(txtMensajeAltaCliente, gbc_txtMensajeAltaCliente);
 		txtMensajeAltaCliente.setColumns(10);
 		
-		JButton btnCrearCliente = new JButton("CREAR");
+		btnCrearCliente = new JButton("CREAR");
 		GridBagConstraints gbc_btnCrearCliente = new GridBagConstraints();
 		gbc_btnCrearCliente.fill = GridBagConstraints.BOTH;
 		gbc_btnCrearCliente.insets = new Insets(0, 0, 5, 5);
