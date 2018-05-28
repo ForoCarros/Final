@@ -35,8 +35,8 @@ public class Altas{
 	 * @return
 	 */
 
-	public boolean crearArticulo(int id, String nombre, String descripcion) {
-		Articulo articulo = new Articulo(id, nombre, descripcion, id, null);
+	public boolean crearArticulo(int idArticulo, String nombre, String descripcion, float precio) {
+		Articulo articulo = new Articulo(idArticulo, nombre, descripcion, precio);
 		Logica logica = new Logica();
 		ArrayList listaArticulo = (ArrayList) logica.obtener();
 		if (listaArticulo == null)
@@ -74,16 +74,12 @@ public class Altas{
 	 * Crea el pedido sin necesidad de comprobar nada, los clientes hacen pedidos y
 	 * nos da igual si son iguales
 	 * 
-	 * @param lineas
 	 * @param cliente
-	 * @param total
 	 * @param numeroPedido
-	 * @param fecha,
-	 *            ni idea de como meter la fecha aqui.
-	 * @return
+	 * @return true o false
 	 */
-	public boolean crearPedido(ArrayList<Linea> lineas, Cliente cliente, double total, int numeroPedido) {
-		Pedido pedido = new Pedido(numeroPedido, null);
+	public boolean crearPedido(int numeroPedido, Cliente cliente) {
+		Pedido pedido = new Pedido(numeroPedido, cliente);
 		Logica logica = new Logica();
 		return logica.grabar(pedido);
 	}
