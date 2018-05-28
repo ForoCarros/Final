@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 public class Pedido implements Serializable{
-	private ArrayList<LineaPedido> lineas;
+	private ArrayList<Linea> lineas;
 	private Cliente cliente;
 	private double total;
 	private int numeroPedido;
 	private GregorianCalendar fecha;
 
-	public Pedido(ArrayList<LineaPedido> lineas, Cliente cliente, double total, int numeroPedido,
+	public Pedido(ArrayList<Linea> lineas, Cliente cliente, double total, int numeroPedido,
 			GregorianCalendar fecha) {
 		super();
 		this.lineas = lineas;
@@ -21,7 +21,7 @@ public class Pedido implements Serializable{
 		this.fecha = fecha;
 	}
 
-	public ArrayList<LineaPedido> getLineas() {
+	public ArrayList<Linea> getLineas() {
 		return lineas;
 	}
 

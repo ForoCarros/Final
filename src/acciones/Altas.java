@@ -8,7 +8,7 @@ import control.ParaUI;
 import logica.Logica;
 import modelo.Articulo;
 import modelo.Cliente;
-import modelo.LineaPedido;
+import modelo.Linea;
 import modelo.Pedido;
 
 /**
@@ -83,7 +83,7 @@ public class Altas implements ActionListener{
 	 *            ni idea de como meter la fecha aqui.
 	 * @return
 	 */
-	public boolean crearPedido(ArrayList<LineaPedido> lineas, Cliente cliente, double total, int numeroPedido) {
+	public boolean crearPedido(ArrayList<Linea> lineas, Cliente cliente, double total, int numeroPedido) {
 		Pedido pedido = new Pedido(lineas, cliente, total, numeroPedido, null);
 		Logica logica = new Logica();
 		return logica.grabar(pedido);

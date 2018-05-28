@@ -1,11 +1,11 @@
 package modelo;
 
-public class LineaPedido {
+public class Linea {
 	private Articulo articulo;
 	private int cantidad;
 	private float precio;
 
-	public LineaPedido(Articulo articulo, int cantidad, float precio) {
+	public Linea(Articulo articulo, int cantidad, float precio) {
 		super();
 		this.articulo = articulo;
 		this.cantidad = cantidad;
