@@ -14,6 +14,8 @@ import java.awt.Component;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
 
 public class UI extends JFrame {
 

@@ -20,7 +20,7 @@ public class ParaUI extends UI {
 	private Altas altas;
 	private Logica logica;
 	private Validador validador;
-	
+
 	private GestorAltaArticulo listenerAltaArticulo;
 	private GestorConsultarArticulo listenerConsultarArticulo;
 	private GestorModificarArticulo listenerModificarArticulo;
@@ -52,6 +52,25 @@ public class ParaUI extends UI {
 		this.mntmAltaPedido.addActionListener(this.listenerAltaPedido);
 	}
 
+	public Component getSelected() {
+		Component seleccionada = null;
+		Component[] ventanas = this.contentPane.getComponents();
+		System.out.println("- PRE -");
+		System.out.println("Componenetes " + ventanas.length);
+		System.out.println("Seleccionada: " + seleccionada);
+		System.out.println("- OP -");
+		for (Component component : ventanas) {
+			if (component.hasFocus()) {
+				System.out.println(component);
+				seleccionada = component;
+			}
+		}
+		System.out.println("- POST -");
+		System.out.println("Componenetes " + ventanas.length);
+		System.out.println("Seleccionada: " + seleccionada);
+		return seleccionada;
+	}
+
 	public void crearJInternalFrame(String clase) {
 		Class<?> cls = null;
 		try {
@@ -68,6 +87,7 @@ public class ParaUI extends UI {
 			frame.setVisible(true);
 			frame.pack();
 			this.contentPane.add(frame);
+			System.out.println("Parent: " + frame.getParent());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
