@@ -11,16 +11,15 @@ import control.ParaUI;
  */
 public class GestorAltaCliente implements ActionListener {
 
-	private ParaUI paraui;
+	private ParaUI paraUI;
+
+	public GestorAltaCliente(ParaUI paraui) {
+		super();
+		this.paraUI = paraui;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		if(paraui.altas.crearCliente(meter todos los parametros y hay que cogerlos del paraui/vista)){
-//			paraui.insertarMensaje("cliente creado correctamente");
-//		}else {
-//			paraui.insertarMensaje("ERROR");
-//		}
-
+		this.paraUI.crearJInternalFrame(e.getActionCommand());
 	}
-
 }

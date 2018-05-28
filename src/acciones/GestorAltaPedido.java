@@ -3,16 +3,20 @@ package acciones;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import control.ParaUI;
+
 public class GestorAltaPedido implements ActionListener {
+
+	private ParaUI paraUI;
+
+	public GestorAltaPedido(ParaUI paraUI) {
+		super();
+		this.paraUI = paraUI;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		if(paraui.altas.crearPedido(meter todos los parametros y hay que cogerlos del paraui/vista)){
-//		paraui.insertarMensaje("pedido creado");
-//	}else {
-//		paraui.insertarMensaje("ERROR");
-//	}
-
+		this.paraUI.crearJInternalFrame(e.getActionCommand());
 	}
 
 }
