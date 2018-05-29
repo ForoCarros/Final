@@ -1,4 +1,4 @@
-package acciones;
+package acciones.ventanas;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -14,11 +14,11 @@ import vista.AltaCliente;
  * @author Fernan, Pablo
  *
  */
-public class GestorAltaCliente implements ActionListener {
+public class listenerAltaCliente implements ActionListener {
 
 	private ParaUI paraUI;
 
-	public GestorAltaCliente(ParaUI paraui) {
+	public listenerAltaCliente(ParaUI paraui) {
 		super();
 		this.paraUI = paraui;
 	}

@@ -1,15 +1,15 @@
-package acciones;
+package acciones.ventanas;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
 
-public class GestorDeleteCliente implements ActionListener {
+public class listenerDeleteCliente implements ActionListener {
 
 	private ParaUI paraUI;
 
-	public GestorDeleteCliente(ParaUI paraUI) {
+	public listenerDeleteCliente(ParaUI paraUI) {
 		super();
 		this.paraUI = paraUI;
 	}

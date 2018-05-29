@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="logica.Logica" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/logica/Logica.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="239" x="1504" y="1073"/>    
+    <position height="153" width="239" x="1609" y="1088"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="vista.AltaCliente" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/AltaCliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="205" x="1765" y="381"/>    
+    <position height="315" width="205" x="1870" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="modelo.Cliente" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="187" x="557" y="381"/>    
+    <position height="315" width="187" x="662" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,16 +30,16 @@
   </class>  
   <class id="4" language="java" name="modelo.Linea" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/Linea.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="126" x="784" y="381"/>    
+    <position height="207" width="126" x="889" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="acciones.GestorModificarArticulo" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorModificarArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="1544" y="736"/>    
+  <class id="5" language="java" name="acciones.ventanas.listenerModificarArticulo" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerModificarArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1649" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="vista.AltaArticulo" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/AltaArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="143" x="2010" y="381"/>    
+    <position height="189" width="143" x="2115" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="logica.Bajas" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/logica/Bajas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="119" x="1217" y="-10"/>    
+    <position height="99" width="119" x="1322" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="modelo.Pedido" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/Pedido.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="167" x="784" y="-10"/>    
+    <position height="261" width="167" x="889" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="control.Principal" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/control/Principal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="179" y="-10"/>    
+    <position height="99" width="113" x="284" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,25 +84,25 @@
   </class>  
   <class id="10" language="java" name="utiles.ValidadorTest" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/utiles/ValidadorTest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="169" x="950" y="381"/>    
+    <position height="135" width="169" x="1055" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="acciones.GestorAltaArticulo" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorAltaArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="1778" y="736"/>    
+  <class id="11" language="java" name="acciones.ventanas.listenerAltaArticulo" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerAltaArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1883" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="acciones.GestorAddLinea" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorAddLinea.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="332" y="-10"/>    
+  <class id="12" language="java" name="acciones.ventanas.listenerAddLinea" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerAddLinea.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="437" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="modelo.DAO" project="PROYECTO FINAL" file="/PROYECTO FINAL/src/modelo/DAO.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="219" x="1504" y="1428"/>    
+    <position height="225" width="219" x="1609" y="1443"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="vista.AltaPedido" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/AltaPedido.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="164" x="2193" y="381"/>    
+    <position height="243" width="164" x="2298" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,16 +129,16 @@
   </class>  
   <class id="15" language="java" name="modelo.Proveedor" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/Proveedor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="151" x="594" y="1073"/>    
+    <position height="153" width="151" x="699" y="1088"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="acciones.GestorConsultarArticulo" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorConsultarArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="2012" y="736"/>    
+  <class id="16" language="java" name="acciones.ventanas.listenerConsultarArticulo" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerConsultarArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="2117" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="modelo.Precio" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/Precio.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="233" x="785" y="1073"/>    
+    <position height="315" width="233" x="890" y="1088"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="utiles.Validador" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/utiles/Validador.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="239" x="950" y="736"/>    
+    <position height="153" width="239" x="1055" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   </class>  
   <class id="19" language="java" name="vista.JPanelBackground" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/JPanelBackground.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="178" x="2397" y="381"/>    
+    <position height="135" width="178" x="2502" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="vista.PanelBG" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/PanelBG.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="178" x="566" y="-10"/>    
+    <position height="117" width="178" x="671" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="logica.Busquedas" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/logica/Busquedas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="128" x="1376" y="-10"/>    
+    <position height="135" width="128" x="1481" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,16 +192,16 @@
   </class>  
   <class id="22" language="java" name="logica.Altas" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/logica/Altas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="254" x="1229" y="736"/>    
+    <position height="135" width="254" x="1334" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="acciones.GestorAltaCliente" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorAltaCliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="2246" y="736"/>    
+  <class id="23" language="java" name="acciones.ventanas.listenerAltaCliente" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerAltaCliente.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="2351" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -210,7 +210,7 @@
   </class>  
   <class id="24" language="java" name="control.ParaUI" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/control/ParaUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="181" x="1544" y="381"/>    
+    <position height="171" width="181" x="1649" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -219,16 +219,16 @@
   </class>  
   <class id="25" language="java" name="modelo.Articulo" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/Articulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="221" x="689" y="736"/>    
+    <position height="297" width="221" x="794" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="acciones.GestorDeleteCliente" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorDeleteCliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="1544" y="-10"/>    
+  <class id="26" language="java" name="acciones.ventanas.listenerDeleteCliente" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerDeleteCliente.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1649" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -237,7 +237,7 @@
   </class>  
   <class id="27" language="java" name="modelo.DAO.MyObjectOutputStream" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/modelo/DAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="211" x="1504" y="1693"/>    
+    <position height="99" width="211" x="1609" y="1708"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -246,16 +246,16 @@
   </class>  
   <class id="28" language="java" name="vista.ConsultaArticulo" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/ConsultaArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="164" x="2615" y="381"/>    
+    <position height="153" width="164" x="2720" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="acciones.GestorAltaPedido" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/acciones/GestorAltaPedido.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="194" x="1778" y="-10"/>    
+  <class id="29" language="java" name="acciones.ventanas.listenerAltaPedido" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/acciones/ventanas/listenerAltaPedido.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1883" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -264,7 +264,7 @@
   </class>  
   <class id="30" language="java" name="vista.BajaCliente" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/BajaCliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="162" x="2819" y="381"/>    
+    <position height="135" width="162" x="2924" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -273,7 +273,7 @@
   </class>  
   <class id="31" language="java" name="vista.ModificarArticulo" project="PROYECTO FINAL" 
     file="/PROYECTO FINAL/src/vista/ModificarArticulo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="175" x="3021" y="381"/>    
+    <position height="153" width="175" x="3126" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -282,33 +282,33 @@
   </class>  
   <class id="32" language="java" name="vista.UI" project="PROYECTO FINAL" file="/PROYECTO FINAL/src/vista/UI.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="240" x="2295" y="-10"/>    
+    <position height="351" width="240" x="2400" y="5"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="33">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="32"/>  
-  </generalization>  
-  <association id="34">    
+  <association id="33">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="34" name="listenerModificarArticulo"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="36">    
     <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="35" name="panelAltaPedido"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
+      <attribute id="37" name="panelAltaPedido"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="38" name="paraUI"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <nesting id="39">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="27"/>  
+  </nesting>  
   <association id="40">    
     <end type="SOURCE" refId="5" navigable="false">      
       <attribute id="41" name="paraUI"/>      
@@ -318,11 +318,11 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="43">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="44" name="cliente"/>      
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="44" name="panelConsultarArticulo"/>      
       <multiplicity id="45" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="28" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="46">    
@@ -334,232 +334,232 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="49">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="50" name="paraui"/>      
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="50" name="paraUI"/>      
       <multiplicity id="51" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="52">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="53" name="contentPane"/>      
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="53" name="listenerBajaCliente"/>      
       <multiplicity id="54" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
+    <end type="TARGET" refId="26" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="55">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="56" name="altas"/>      
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="56" name="panelBajaCliente"/>      
       <multiplicity id="57" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="58">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="59" name="paraUI"/>      
-      <multiplicity id="60" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="61">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="62" name="paraUI"/>      
-      <multiplicity id="63" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="64">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="65" name="listenerAltaArticulo"/>      
-      <multiplicity id="66" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="67">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="68" name="precios"/>      
-      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="70">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="71" name="validador"/>      
-      <multiplicity id="72" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="74" name="panelConsultarArticulo"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="76">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="77" name="articulo"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="79">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="80" name="paraui"/>      
-      <multiplicity id="81" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="82">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="83" name="instancia"/>      
-      <multiplicity id="84" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="85">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="86" name="panelAltaCliente"/>      
-      <multiplicity id="87" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="88">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="89" name="dao"/>      
-      <multiplicity id="90" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="91">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="92" name="panelBajaCliente"/>      
-      <multiplicity id="93" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="30" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="94">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="95" name="lineas"/>      
-      <multiplicity id="96" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="97">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="98" name="listenerModificarArticulo"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="100">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="101" name="proveedor"/>      
-      <multiplicity id="102" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="103">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="104" name="logica"/>      
-      <multiplicity id="105" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="106">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="107" name="listenerConsultarArticulo"/>      
-      <multiplicity id="108" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="109">    
-    <bendpoint x="1513" y="736"/>    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="110" name="logica"/>      
-      <multiplicity id="111" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="112">    
+  <association id="58">    
     <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="113" name="panelAltaArticulo"/>      
-      <multiplicity id="114" minimum="0" maximum="1"/>    
+      <attribute id="59" name="panelAltaArticulo"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="115">    
+  <association id="61">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="62" name="instancia"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="65" name="dao"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="68" name="paraUI"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
     <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="116" name="listenerAltaCliente"/>      
-      <multiplicity id="117" minimum="0" maximum="1"/>    
+      <attribute id="71" name="listenerAltaArticulo"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="74" name="articulo"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="77" name="contentPane"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="80" name="proveedor"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="83" name="precios"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="86" name="paraui"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="89" name="paraui"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="92" name="cliente"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="95" name="listenerConsultarArticulo"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="98" name="validador"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="100">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <association id="101">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="102" name="listenerAltaCliente"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="118">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="27"/>  
-  </nesting>  
-  <association id="119">    
+  <association id="104">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="105" name="paraUI"/>      
+      <multiplicity id="106" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="107">    
     <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="120" name="listenerAltaPedido"/>      
-      <multiplicity id="121" minimum="0" maximum="1"/>    
+      <attribute id="108" name="altas"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="110">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="111" name="listenerAltaPedido"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="29" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="122">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="123" name="paraui"/>      
-      <multiplicity id="124" minimum="0" maximum="1"/>    
+  <association id="113">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="114" name="paraUI"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="125">    
+  <association id="116">    
     <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="126" name="panelModificarArticulo"/>      
-      <multiplicity id="127" minimum="0" maximum="1"/>    
+      <attribute id="117" name="panelModificarArticulo"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="31" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="128">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="129" name="paraUI"/>      
-      <multiplicity id="130" minimum="0" maximum="1"/>    
+  <association id="119">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="120" name="panelAltaCliente"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <bendpoint x="1618" y="751"/>    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="123" name="logica"/>      
+      <multiplicity id="124" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="125">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="126" name="logica"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="128">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="129" name="lineas"/>      
+      <multiplicity id="130" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="131">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="132" name="listenerBajaCliente"/>      
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="132" name="paraui"/>      
       <multiplicity id="133" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

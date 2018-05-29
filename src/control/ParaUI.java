@@ -5,12 +5,12 @@ import java.awt.Component;
 
 import javax.swing.JInternalFrame;
 
-import acciones.GestorAltaArticulo;
-import acciones.GestorAltaCliente;
-import acciones.GestorAltaPedido;
-import acciones.GestorConsultarArticulo;
-import acciones.GestorDeleteCliente;
-import acciones.GestorModificarArticulo;
+import acciones.ventanas.listenerAltaArticulo;
+import acciones.ventanas.listenerAltaCliente;
+import acciones.ventanas.listenerAltaPedido;
+import acciones.ventanas.listenerConsultarArticulo;
+import acciones.ventanas.listenerDeleteCliente;
+import acciones.ventanas.listenerModificarArticulo;
 import logica.Altas;
 import logica.Logica;
 import utiles.Validador;
@@ -22,12 +22,12 @@ public class ParaUI extends UI {
 	private Logica logica;
 	private Validador validador;
 
-	private GestorAltaArticulo listenerAltaArticulo;
-	private GestorConsultarArticulo listenerConsultarArticulo;
-	private GestorModificarArticulo listenerModificarArticulo;
-	private GestorAltaCliente listenerAltaCliente;
-	private GestorDeleteCliente listenerBajaCliente;
-	private GestorAltaPedido listenerAltaPedido;
+	private listenerAltaArticulo listenerAltaArticulo;
+	private listenerConsultarArticulo listenerConsultarArticulo;
+	private listenerModificarArticulo listenerModificarArticulo;
+	private listenerAltaCliente listenerAltaCliente;
+	private listenerDeleteCliente listenerBajaCliente;
+	private listenerAltaPedido listenerAltaPedido;
 
 	public ParaUI() {
 		super();
@@ -55,12 +55,12 @@ public class ParaUI extends UI {
 	 * Asigna los listener a cada boton
 	 */
 	private void asignarListener() {
-		this.listenerAltaArticulo = new GestorAltaArticulo(this);
-		this.listenerConsultarArticulo = new GestorConsultarArticulo(this);
-		this.listenerModificarArticulo = new GestorModificarArticulo(this);
-		this.listenerAltaCliente = new GestorAltaCliente(this);
-		this.listenerBajaCliente = new GestorDeleteCliente(this);
-		this.listenerAltaPedido = new GestorAltaPedido(this);
+		this.listenerAltaArticulo = new listenerAltaArticulo(this);
+		this.listenerConsultarArticulo = new listenerConsultarArticulo(this);
+		this.listenerModificarArticulo = new listenerModificarArticulo(this);
+		this.listenerAltaCliente = new listenerAltaCliente(this);
+		this.listenerBajaCliente = new listenerDeleteCliente(this);
+		this.listenerAltaPedido = new listenerAltaPedido(this);
 		this.mntmAltaArticulo.addActionListener(this.listenerAltaArticulo);
 		this.mntmConsultaArticulo.addActionListener(this.listenerConsultarArticulo);
 		this.mntmModificacinArticulo.addActionListener(this.listenerModificarArticulo);

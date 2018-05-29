@@ -143,31 +143,12 @@ public class AltaCliente extends JPanel {
 		txtMensajeAltaCliente.setColumns(10);
 
 		btnCrearCliente = new JButton("CREAR");
-		btnCrearCliente.addActionListener(e -> validarDatos());
 		GridBagConstraints gbc_btnCrearCliente = new GridBagConstraints();
 		gbc_btnCrearCliente.fill = GridBagConstraints.BOTH;
 		gbc_btnCrearCliente.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCrearCliente.gridx = 3;
 		gbc_btnCrearCliente.gridy = 9;
 		add(btnCrearCliente, gbc_btnCrearCliente);
-	}
-	
-	private void validarDatos() {
-		assert !(paraUI.getValidador().comprobarVacio(getTxtRazon().getText()) == true) : "razon vacia";
-		assert !(paraUI.getValidador().comprobarVacio(getTxtNif().getText()) == true) : "nif vacia";
-		assert !(paraUI.getValidador()
-				.comprobarVacio(getTxtDireccion().getText()) == true) : "direccion vacia";
-		assert !(paraUI.getValidador()
-				.comprobarVacio(getTxtTelefono().getText()) == true) : "telefono vacia";
-		assert !(paraUI.getValidador()
-				.comprobarTelefono(getTxtTelefono().getText()) == true) : "telefono erroneo";
-		assert !(paraUI.getValidador().comprobarNif(getTxtNif().getText()) == true) : "nif erroneo";
-		if (paraUI.getAltas().crearCliente(getTxtRazon().getText(), getTxtNif().getText(),
-				getTxtDireccion().getText(), getTxtTelefono().getText())) {
-			getTxtMensajeAltaCliente().setText("cliente creado");
-		} else {
-			getTxtMensajeAltaCliente().setText("ERROR");
-		}
 	}
 
 	public JTextField getTxtRazon() {

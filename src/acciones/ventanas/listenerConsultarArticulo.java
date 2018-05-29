@@ -1,22 +1,24 @@
-package acciones;
+package acciones.ventanas;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
 
-public class GestorAltaPedido implements ActionListener {
-
+public class listenerConsultarArticulo implements ActionListener {
+	
 	private ParaUI paraUI;
+	
+	
 
-	public GestorAltaPedido(ParaUI paraUI) {
+	public listenerConsultarArticulo(ParaUI paraUI) {
 		super();
 		this.paraUI = paraUI;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.paraUI.getContentPane().getComponent(5).setVisible(true);
+		this.paraUI.getContentPane().getComponent(1).setVisible(true);
 	}
 
 }
