@@ -25,12 +25,13 @@ public class AltaCliente extends JPanel {
 	 */
 	public AltaCliente() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0,
+				Double.MIN_VALUE };
 		setLayout(gridBagLayout);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("ALTA CLIENTE");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3));
@@ -42,7 +43,7 @@ public class AltaCliente extends JPanel {
 		gbc_lblNewLabel_1.gridx = 1;
 		gbc_lblNewLabel_1.gridy = 1;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
-		
+
 		JLabel lblNombre = new JLabel("Razon Social:");
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
@@ -51,7 +52,7 @@ public class AltaCliente extends JPanel {
 		gbc_lblNombre.gridx = 1;
 		gbc_lblNombre.gridy = 3;
 		add(lblNombre, gbc_lblNombre);
-		
+
 		txtRazon = new JTextField();
 		GridBagConstraints gbc_txtRazon = new GridBagConstraints();
 		gbc_txtRazon.gridwidth = 2;
@@ -61,7 +62,7 @@ public class AltaCliente extends JPanel {
 		gbc_txtRazon.gridy = 3;
 		add(txtRazon, gbc_txtRazon);
 		txtRazon.setColumns(10);
-		
+
 		JLabel lblNewLabel = new JLabel("Nif/Cif:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -70,7 +71,7 @@ public class AltaCliente extends JPanel {
 		gbc_lblNewLabel.gridx = 1;
 		gbc_lblNewLabel.gridy = 4;
 		add(lblNewLabel, gbc_lblNewLabel);
-		
+
 		txtNif = new JTextField();
 		GridBagConstraints gbc_txtNif = new GridBagConstraints();
 		gbc_txtNif.gridwidth = 2;
@@ -80,7 +81,7 @@ public class AltaCliente extends JPanel {
 		gbc_txtNif.gridy = 4;
 		add(txtNif, gbc_txtNif);
 		txtNif.setColumns(10);
-		
+
 		JLabel lblDireccion = new JLabel("Direccion:");
 		lblDireccion.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblDireccion = new GridBagConstraints();
@@ -89,7 +90,7 @@ public class AltaCliente extends JPanel {
 		gbc_lblDireccion.gridx = 1;
 		gbc_lblDireccion.gridy = 5;
 		add(lblDireccion, gbc_lblDireccion);
-		
+
 		txtDireccion = new JTextField();
 		GridBagConstraints gbc_txtDireccion = new GridBagConstraints();
 		gbc_txtDireccion.gridwidth = 2;
@@ -99,7 +100,7 @@ public class AltaCliente extends JPanel {
 		gbc_txtDireccion.gridy = 5;
 		add(txtDireccion, gbc_txtDireccion);
 		txtDireccion.setColumns(10);
-		
+
 		JLabel lblTele = new JLabel("Telefono:");
 		lblTele.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblTele = new GridBagConstraints();
@@ -108,7 +109,7 @@ public class AltaCliente extends JPanel {
 		gbc_lblTele.gridx = 1;
 		gbc_lblTele.gridy = 6;
 		add(lblTele, gbc_lblTele);
-		
+
 		txtTelefono = new JTextField();
 		GridBagConstraints gbc_txtTelefono = new GridBagConstraints();
 		gbc_txtTelefono.gridwidth = 2;
@@ -118,7 +119,7 @@ public class AltaCliente extends JPanel {
 		gbc_txtTelefono.gridy = 6;
 		add(txtTelefono, gbc_txtTelefono);
 		txtTelefono.setColumns(10);
-		
+
 		JLabel lblMensaje = new JLabel("Mensaje:");
 		lblMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblMensaje = new GridBagConstraints();
@@ -127,7 +128,7 @@ public class AltaCliente extends JPanel {
 		gbc_lblMensaje.gridx = 1;
 		gbc_lblMensaje.gridy = 8;
 		add(lblMensaje, gbc_lblMensaje);
-		
+
 		txtMensajeAltaCliente = new JTextField();
 		txtMensajeAltaCliente.setEditable(false);
 		GridBagConstraints gbc_txtMensajeAltaCliente = new GridBagConstraints();
@@ -138,7 +139,7 @@ public class AltaCliente extends JPanel {
 		gbc_txtMensajeAltaCliente.gridy = 8;
 		add(txtMensajeAltaCliente, gbc_txtMensajeAltaCliente);
 		txtMensajeAltaCliente.setColumns(10);
-		
+
 		btnCrearCliente = new JButton("CREAR");
 		GridBagConstraints gbc_btnCrearCliente = new GridBagConstraints();
 		gbc_btnCrearCliente.fill = GridBagConstraints.BOTH;
@@ -146,7 +147,30 @@ public class AltaCliente extends JPanel {
 		gbc_btnCrearCliente.gridx = 3;
 		gbc_btnCrearCliente.gridy = 9;
 		add(btnCrearCliente, gbc_btnCrearCliente);
+	}
 
+	public JTextField getTxtRazon() {
+		return txtRazon;
+	}
+
+	public JTextField getTxtNif() {
+		return txtNif;
+	}
+
+	public JTextField getTxtDireccion() {
+		return txtDireccion;
+	}
+
+	public JTextField getTxtTelefono() {
+		return txtTelefono;
+	}
+
+	public JTextField getTxtMensajeAltaCliente() {
+		return txtMensajeAltaCliente;
+	}
+
+	public JButton getBtnCrearCliente() {
+		return btnCrearCliente;
 	}
 
 }
