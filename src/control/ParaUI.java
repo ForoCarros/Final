@@ -5,6 +5,7 @@ import java.awt.Component;
 
 import javax.swing.JInternalFrame;
 
+import acciones.botones.listenerBtnAltaArticulo;
 import acciones.botones.listenerBtnAltaCliente;
 import acciones.ventanas.listenerAltaArticulo;
 import acciones.ventanas.listenerAltaCliente;
@@ -29,17 +30,15 @@ public class ParaUI extends UI {
 	private listenerAltaCliente listenerAltaCliente;
 	private listenerDeleteCliente listenerBajaCliente;
 	private listenerAltaPedido listenerAltaPedido;
+	private listenerBtnAltaArticulo listenerBtnAltaArticulo;
 	private listenerBtnAltaCliente listenerBtnAltaCliente;
 
 	public ParaUI() {
 		super();
 		this.altas = new Altas(this);
+		this.validador = new Validador();
 		asignarListenerVentana();
 		asignarListenerBotones();
-		Component component[] = this.contentPane.getComponents();
-		for (Component component2 : component) {
-			System.out.println(component2.getName());
-		}
 	}
 
 	public Altas getAltas() {
@@ -56,6 +55,7 @@ public class ParaUI extends UI {
 	
 	private void asignarListenerBotones() {
 		this.listenerBtnAltaCliente = new listenerBtnAltaCliente(this);
+//		this.listener
 		this.panelAltaCliente.getBtnCrearCliente().addActionListener(this.listenerBtnAltaCliente);
 	}
 
