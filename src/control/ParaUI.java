@@ -1,5 +1,6 @@
 package control;
 
+import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.JInternalFrame;
@@ -32,6 +33,22 @@ public class ParaUI extends UI {
 		super();
 		this.altas = new Altas(this);
 		asignarListener();
+		Component component[] = this.contentPane.getComponents();
+		for (Component component2 : component) {
+			System.out.println(component2.getName());
+		}
+	}
+
+	public Altas getAltas() {
+		return altas;
+	}
+
+	public Logica getLogica() {
+		return logica;
+	}
+
+	public Validador getValidador() {
+		return validador;
 	}
 
 	/**
@@ -50,25 +67,6 @@ public class ParaUI extends UI {
 		this.mntmAltaCliente.addActionListener(this.listenerAltaCliente);
 		this.mntmBajaCliente.addActionListener(this.listenerBajaCliente);
 		this.mntmAltaPedido.addActionListener(this.listenerAltaPedido);
-	}
-
-	public Component getSelected() {
-		Component seleccionada = null;
-		Component[] ventanas = this.contentPane.getComponents();
-		System.out.println("- PRE -");
-		System.out.println("Componenetes " + ventanas.length);
-		System.out.println("Seleccionada: " + seleccionada);
-		System.out.println("- OP -");
-		for (Component component : ventanas) {
-			if (component.hasFocus()) {
-				System.out.println(component);
-				seleccionada = component;
-			}
-		}
-		System.out.println("- POST -");
-		System.out.println("Componenetes " + ventanas.length);
-		System.out.println("Seleccionada: " + seleccionada);
-		return seleccionada;
 	}
 
 	public void crearJInternalFrame(String clase) {
