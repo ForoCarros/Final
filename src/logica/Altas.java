@@ -3,10 +3,12 @@ package logica;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 import control.ParaUI;
 import modelo.Articulo;
 import modelo.Cliente;
+import modelo.DAO;
 import modelo.Linea;
 import modelo.Pedido;
 
@@ -23,7 +25,7 @@ public class Altas {
 	public Altas(ParaUI paraui) {
 		super();
 		this.paraui = paraui;
-		this.logica = this.paraui.getLogica();
+		this.logica = new Logica();
 	}
 
 	/**
@@ -58,15 +60,15 @@ public class Altas {
 	 * @return true o false segun si ha podido grabarlo o no
 	 */
 	public boolean crearCliente(String razonSocial, String dni, String direccion, String telefono) {
-		String ruta = "datos/clientes/clientes.data";
-		Cliente cliente = new Cliente(razonSocial, dni, direccion, telefono);
-		ArrayList<Cliente> listacliente = (ArrayList<Cliente>) this.logica.dameRuta(ruta);
-		if (!listacliente.contains(cliente)) {
-			listacliente.add(cliente);
-			return this.logica.grabar(listacliente, ruta);
+		DAO dao = new DAO();
+		String ruta = "data/clientes/clientes.data";
+		String rutaIndice = "data/clientes/indice.ind";
+		this.logica.comprobarArchivoExistente(ruta);
+		TreeMap<Integer, Cliente> clientes = (TreeMap<Integer, Cliente>) dao.leer(ruta);
+		if(clientes.isEmpty() || clientes.size == 1) {
+			clientes.put(key, value)
 		}
 		return false;
-		
 	}
 
 	/**

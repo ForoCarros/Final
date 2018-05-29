@@ -1,5 +1,8 @@
 package logica;
 
+import java.io.File;
+import java.io.IOException;
+
 import modelo.DAO;
 
 /**
@@ -67,4 +70,15 @@ public class Logica {
 		return object.equals(object2);
 	}
 
+	public void comprobarArchivoExistente(String ruta) {
+		File f = new File(ruta);
+		if(!f.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 }
