@@ -13,21 +13,18 @@ public class Logica {
 	private DAO dao;
 
 	/**
-	 * nose que mas cosas tiene el DAO....lo digo para meter constructor
-	 * 
-	 * @param object
-	 * @return
+	 * nose que mas cosas tiene la logica....lo digo para meter constructor
 	 */
 
 	/**
 	 * Graba en el archivo que le pasemos el objeto
 	 * 
 	 * @param object
+	 * @param ruta 
 	 * @return true o false
 	 */
-	public boolean grabar(Object object) {
-		return dao.grabar("ruta", object);
-		// return new DAO().grabar("ruta", object, true);
+	public boolean grabar(Object object, String ruta) {
+		return new DAO().grabar(ruta, object, true);
 	}
 
 	/**
@@ -46,13 +43,13 @@ public class Logica {
 	 * 
 	 * @return true o false
 	 */
-	public Object obtener(Object object) {
+	public Object obtener(Object object, String ruta) {
 		dao = new DAO();
 		Object dummy = null;
 		boolean iguales = false;
 		int contador = 0;
 		do {
-			dao.leer("ruta", contador);
+			dao.leer(ruta, contador);
 			iguales = comprobarDuplicado(dummy, object);
 			contador++;
 		} while (iguales = false && dummy != null);
