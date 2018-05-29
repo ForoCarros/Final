@@ -91,5 +91,8 @@ public class ParaUI extends UI {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		this.contentPane.repaint();
+		this.contentPane.validate();
+		this.contentPane.revalidate();
 	}
 }
