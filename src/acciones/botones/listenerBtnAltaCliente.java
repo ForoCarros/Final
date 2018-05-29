@@ -21,8 +21,8 @@ public class listenerBtnAltaCliente implements ActionListener {
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtNif().getText()) : "nif vacia";
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtDireccion().getText()) : "direccion vacia";
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtTelefono().getText()) : "telefono vacia";
-		assert !this.paraUI.getValidador().comprobarTelefono(ventana.getTxtTelefono().getText()) : "telefono erroneo";
-		assert !this.paraUI.getValidador().comprobarNif(ventana.getTxtNif().getText()) : "nif erroneo";
+		assert this.paraUI.getValidador().comprobarTelefono(ventana.getTxtTelefono().getText()) : "telefono erroneo";
+		assert this.paraUI.getValidador().comprobarNif(ventana.getTxtNif().getText()) : "nif erroneo";
 		if (this.paraUI.getAltas().crearCliente(ventana.getTxtRazon().getText(), ventana.getTxtNif().getText(),
 				ventana.getTxtDireccion().getText(), ventana.getTxtTelefono().getText())) {
 			ventana.getTxtMensajeAltaCliente().setText("cliente creado");
