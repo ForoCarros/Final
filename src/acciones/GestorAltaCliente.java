@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JInternalFrame;
 
 import control.ParaUI;
+import vista.AltaCliente;
 
 /**
  * 
@@ -24,28 +25,23 @@ public class GestorAltaCliente implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JInternalFrame ventana = (JInternalFrame) this.paraUI.getContentPane().getComponent(3);
-		ventana.setVisible(true);
-		
-		
-		
-//		assert !(this.paraUI.getValidador().comprobarVacio(ventana.txtRazon.getText()) == true) : "razon vacia";
-//		assert !(this.paraUI.getValidador().comprobarVacio(ventana.txtNif.getText()) == true) : "nif vacia";
-//		assert !(this.paraUI.getValidador().comprobarVacio(ventana.txtDireccion.getText()) == true) : "direccion vacia";
-//		assert !(this.paraUI.getValidador().comprobarVacio(ventana.txtTelefono.getText()) == true) : "telefono vacia";
-//		assert !(this.paraUI.getValidador()
-//				.comprobarTelefono(ventana.txtTelefono.getText()) == true) : "telefono erroneo";
-//		assert !(this.paraUI.getValidador().comprobarNif(ventana.txtNif.getText()) == true) : "nif erroneo";
-//
-//		/**
-//		 * Los botones como los añadimos??
-//		 */
-//
-//		if (this.paraUI.getAltas().crearCliente(ventana.txtRazon.getText(), ventana.txtNif.getText(),
-//				ventana.txtDireccion.getText(), ventana.txtTelefono.getText())) {
-//			txtMensajeAltaCliente.setText("cliente creado");
-//		} else {
-//			txtMensajeAltaCliente.setText("ERROR");
-//		}
+		this.paraUI.getContentPane().getComponent(3).setVisible(true);
+		AltaCliente ventana = this.paraUI.getPanelAltaCliente();
+
+		assert !(this.paraUI.getValidador().comprobarVacio(ventana.getTxtRazon().getText()) == true) : "razon vacia";
+		assert !(this.paraUI.getValidador().comprobarVacio(ventana.getTxtNif().getText()) == true) : "nif vacia";
+		assert !(this.paraUI.getValidador()
+				.comprobarVacio(ventana.getTxtDireccion().getText()) == true) : "direccion vacia";
+		assert !(this.paraUI.getValidador()
+				.comprobarVacio(ventana.getTxtTelefono().getText()) == true) : "telefono vacia";
+		assert !(this.paraUI.getValidador()
+				.comprobarTelefono(ventana.getTxtTelefono().getText()) == true) : "telefono erroneo";
+		assert !(this.paraUI.getValidador().comprobarNif(ventana.getTxtNif().getText()) == true) : "nif erroneo";
+		if (this.paraUI.getAltas().crearCliente(ventana.getTxtRazon().getText(), ventana.getTxtNif().getText(),
+				ventana.getTxtDireccion().getText(), ventana.getTxtTelefono().getText())) {
+			ventana.getTxtMensajeAltaCliente().setText("cliente creado");
+		} else {
+			ventana.getTxtMensajeAltaCliente().setText("ERROR");
+		}
 	}
 }
