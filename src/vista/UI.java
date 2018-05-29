@@ -20,6 +20,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 
+/**
+ * 
+ * @author Pablo
+ *
+ */
 public class UI extends JFrame {
 
 	private BufferedImage img;
@@ -30,6 +35,12 @@ public class UI extends JFrame {
 	protected JMenuItem mntmBajaCliente;
 	protected JMenuItem mntmAltaPedido;
 	protected JPanelBackground contentPane;
+	protected AltaArticulo panelAltaArticulo;
+	protected ConsultaArticulo panelConsultarArticulo;
+	protected ModificarArticulo panelModificarArticulo;
+	protected AltaCliente panelAltaCliente;
+	protected BajaCliente panelBajaCliente;
+	protected AltaPedido panelAltaPedido;
 
 	/**
 	 * Create the frame.
@@ -92,57 +103,104 @@ public class UI extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JInternalFrame frameAltaArticulo = new JInternalFrame("ALta artículo.");
+
+		crearPaneles();
+		crearVentanas();
+	}
+
+	private void crearPaneles() {
+		this.panelAltaArticulo = new AltaArticulo();
+		this.panelConsultarArticulo = new ConsultaArticulo();
+		this.panelModificarArticulo = new ModificarArticulo();
+		this.panelAltaCliente = new AltaCliente();
+		this.panelBajaCliente = new BajaCliente();
+		this.panelAltaPedido = new AltaPedido();
+	}
+
+	private void crearVentanas() {
+		JInternalFrame frameAltaArticulo = new JInternalFrame("Alta artículo.");
 		frameAltaArticulo.setClosable(true);
 		frameAltaArticulo.setResizable(true);
 		frameAltaArticulo.setMaximizable(true);
-		frameAltaArticulo.setBounds(0, 0, 55, 34);
+		frameAltaArticulo.setBounds(328, 224, 55, 34);
+		frameAltaArticulo.setName("Alta articulo");
 		contentPane.add(frameAltaArticulo);
-		frameAltaArticulo.getContentPane().add(new AltaArticulo());
+		frameAltaArticulo.getContentPane().add(this.panelAltaArticulo);
 		frameAltaArticulo.pack();
-		
+
 		JInternalFrame frameConsultaArticulo = new JInternalFrame("Consultar artículo.");
 		frameConsultaArticulo.setClosable(true);
 		frameConsultaArticulo.setResizable(true);
 		frameConsultaArticulo.setMaximizable(true);
-		frameConsultaArticulo.setBounds(0, 0, 55, 34);
+		frameConsultaArticulo.setBounds(175, 0, 55, 34);
+		frameConsultaArticulo.setName("Consultar articulo");
 		contentPane.add(frameConsultaArticulo);
+		frameConsultaArticulo.getContentPane().add(this.panelConsultarArticulo);
 		frameConsultaArticulo.pack();
-		
+
 		JInternalFrame frameModificacion = new JInternalFrame("Modificar artículo.");
 		frameModificacion.setClosable(true);
 		frameModificacion.setResizable(true);
 		frameModificacion.setMaximizable(true);
-		frameModificacion.setBounds(0, 0, 55, 34);
+		frameModificacion.setBounds(214, 113, 55, 34);
+		frameModificacion.setName("Modificar articulo");
 		contentPane.add(frameModificacion);
-		frameModificacion.getContentPane().add(new ModificarArticulo());
+		frameModificacion.getContentPane().add(this.panelModificarArticulo);
 		frameModificacion.pack();
-		
+
 		JInternalFrame frameAltaCliente = new JInternalFrame("Alta cliente.");
 		frameAltaCliente.setClosable(true);
 		frameAltaCliente.setResizable(true);
 		frameAltaCliente.setMaximizable(true);
-		frameAltaCliente.setBounds(0, 0, 55, 34);
+		frameAltaCliente.setBounds(235, 0, 55, 34);
+		frameAltaCliente.setName("Alta cliente");
 		contentPane.add(frameAltaCliente);
-		frameAltaCliente.getContentPane().add(new AltaCliente());
+		frameAltaCliente.getContentPane().add(this.panelAltaCliente);
 		frameAltaCliente.pack();
-		
-		JInternalFrame frameConsultaCliente = new JInternalFrame("Consultar cliente.");
-		frameConsultaCliente.setClosable(true);
-		frameConsultaCliente.setResizable(true);
-		frameConsultaCliente.setMaximizable(true);
-		frameConsultaCliente.setBounds(0, 0, 55, 34);
-		contentPane.add(frameConsultaCliente);
-		frameConsultaCliente.pack();
-		
+
+		JInternalFrame frameBajCliente = new JInternalFrame("Baja cliente.");
+		frameBajCliente.setClosable(true);
+		frameBajCliente.setResizable(true);
+		frameBajCliente.setMaximizable(true);
+		frameBajCliente.setBounds(0, 0, 55, 34);
+		frameBajCliente.setName("Baja cliente");
+		contentPane.add(frameBajCliente);
+		frameBajCliente.getContentPane().add(this.panelBajaCliente);
+		frameBajCliente.pack();
+
 		JInternalFrame frameAltaPedido = new JInternalFrame("Alta pedido.");
 		frameAltaPedido.setClosable(true);
 		frameAltaPedido.setResizable(true);
 		frameAltaPedido.setMaximizable(true);
 		frameAltaPedido.setBounds(0, 0, 55, 34);
+		frameAltaPedido.setName("Alta pedido");
 		contentPane.add(frameAltaPedido);
-		frameAltaPedido.getContentPane().add(new AltaPedido());
+		frameAltaPedido.getContentPane().add(this.panelAltaPedido);
 		frameAltaPedido.pack();
 	}
+
+	public AltaArticulo getPanelAltaArticulo() {
+		return panelAltaArticulo;
+	}
+
+	public ConsultaArticulo getPanelConsultarArticulo() {
+		return panelConsultarArticulo;
+	}
+
+	public ModificarArticulo getPanelModificarArticulo() {
+		return panelModificarArticulo;
+	}
+
+	public AltaCliente getPanelAltaCliente() {
+		return panelAltaCliente;
+	}
+
+	public BajaCliente getPanelBajaCliente() {
+		return panelBajaCliente;
+	}
+
+	public AltaPedido getPanelAltaPedido() {
+		return panelAltaPedido;
+	}
+
 }
