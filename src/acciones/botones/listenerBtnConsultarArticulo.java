@@ -5,21 +5,18 @@ import java.awt.event.ActionListener;
 
 import control.ParaUI;
 
-public class listenerBtnAltaArticulo implements ActionListener{
+public class listenerBtnConsultarArticulo implements ActionListener {
 	private ParaUI paraUI;
-	
-	
 
-	public listenerBtnAltaArticulo(ParaUI paraUI) {
+	public listenerBtnConsultarArticulo(ParaUI paraUI) {
 		super();
 		this.paraUI = paraUI;
 	}
 
-
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		// TODO Auto-generated method stub
+
 	}
 
 }
