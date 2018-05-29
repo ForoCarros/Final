@@ -10,11 +10,11 @@ import modelo.DAO;
 
 public class Logica {
 
-	private DAO dao;
+	private DAO<?> dao;
 
-	/**
-	 * nose que mas cosas tiene la logica....lo digo para meter constructor
-	 */
+	public Logica() {
+		this.dao = new DAO<>();
+	}
 
 	/**
 	 * Graba en el archivo que le pasemos el objeto
@@ -24,7 +24,7 @@ public class Logica {
 	 * @return true o false
 	 */
 	public boolean grabar(Object object, String ruta) {
-		return new DAO().grabar(ruta, object, true);
+		return new DAO<Object>().grabar(ruta, object, true);
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class Logica {
 	 * @return
 	 */
 	public Object dameRuta(String ruta) {
-		dao = new DAO();
+		dao = new DAO<Object>();
 		return dao.leer(ruta);
 	}
 
@@ -44,7 +44,7 @@ public class Logica {
 	 * @return true o false
 	 */
 	public Object obtener(Object object, String ruta) {
-		dao = new DAO();
+		dao = new DAO<Object>();
 		Object dummy = null;
 		boolean iguales = false;
 		int contador = 0;

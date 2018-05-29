@@ -23,7 +23,7 @@ public class Altas {
 	public Altas(ParaUI paraui) {
 		super();
 		this.paraui = paraui;
-		this.logica=this.paraui.getLogica();
+		this.logica = this.paraui.getLogica();
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class Altas {
 	public boolean crearArticulo(int idArticulo, String nombre, String descripcion, float precio) {
 		String ruta = "articulo.txt";
 		Articulo articulo = new Articulo(idArticulo, nombre, descripcion, precio);
-		ArrayList listaArticulo = (ArrayList) this.logica.dameRuta(ruta);
+		ArrayList<Object> listaArticulo = (ArrayList<Object>) this.logica.dameRuta(ruta);
 		if (listaArticulo == null)
 			listaArticulo = new ArrayList<>();
 		if (!listaArticulo.contains(articulo)) {
@@ -58,16 +58,15 @@ public class Altas {
 	 * @return true o false segun si ha podido grabarlo o no
 	 */
 	public boolean crearCliente(String razonSocial, String dni, String direccion, String telefono) {
-		String ruta = "cliente.txt";
+		String ruta = "datos/clientes/clientes.data";
 		Cliente cliente = new Cliente(razonSocial, dni, direccion, telefono);
-		ArrayList listacliente = (ArrayList) this.logica.dameRuta(ruta);
-		if (listacliente == null)
-			listacliente = new ArrayList();
+		ArrayList<Cliente> listacliente = (ArrayList<Cliente>) this.logica.dameRuta(ruta);
 		if (!listacliente.contains(cliente)) {
 			listacliente.add(cliente);
 			return this.logica.grabar(listacliente, ruta);
 		}
 		return false;
+		
 	}
 
 	/**

@@ -32,9 +32,11 @@ public class ParaUI extends UI {
 	private listenerAltaPedido listenerAltaPedido;
 	private listenerBtnAltaArticulo listenerBtnAltaArticulo;
 	private listenerBtnAltaCliente listenerBtnAltaCliente;
+	//TODO: listenerBtn
 
 	public ParaUI() {
 		super();
+		this.logica = new Logica();
 		this.altas = new Altas(this);
 		this.validador = new Validador();
 		asignarListenerVentana();
