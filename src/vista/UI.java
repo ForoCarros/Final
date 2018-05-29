@@ -7,10 +7,13 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.JInternalFrame;
 import java.awt.Cursor;
 import java.awt.Frame;
+import java.awt.Window;
 import java.awt.image.BufferedImage;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Container;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -89,5 +92,57 @@ public class UI extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JInternalFrame frameAltaArticulo = new JInternalFrame("ALta artículo.");
+		frameAltaArticulo.setClosable(true);
+		frameAltaArticulo.setResizable(true);
+		frameAltaArticulo.setMaximizable(true);
+		frameAltaArticulo.setBounds(0, 0, 55, 34);
+		contentPane.add(frameAltaArticulo);
+		frameAltaArticulo.getContentPane().add(new AltaArticulo());
+		frameAltaArticulo.pack();
+		
+		JInternalFrame frameConsultaArticulo = new JInternalFrame("Consultar artículo.");
+		frameConsultaArticulo.setClosable(true);
+		frameConsultaArticulo.setResizable(true);
+		frameConsultaArticulo.setMaximizable(true);
+		frameConsultaArticulo.setBounds(0, 0, 55, 34);
+		contentPane.add(frameConsultaArticulo);
+		frameConsultaArticulo.pack();
+		
+		JInternalFrame frameModificacion = new JInternalFrame("Modificar artículo.");
+		frameModificacion.setClosable(true);
+		frameModificacion.setResizable(true);
+		frameModificacion.setMaximizable(true);
+		frameModificacion.setBounds(0, 0, 55, 34);
+		contentPane.add(frameModificacion);
+		frameModificacion.getContentPane().add(new ModificarArticulo());
+		frameModificacion.pack();
+		
+		JInternalFrame frameAltaCliente = new JInternalFrame("Alta cliente.");
+		frameAltaCliente.setClosable(true);
+		frameAltaCliente.setResizable(true);
+		frameAltaCliente.setMaximizable(true);
+		frameAltaCliente.setBounds(0, 0, 55, 34);
+		contentPane.add(frameAltaCliente);
+		frameAltaCliente.getContentPane().add(new AltaCliente());
+		frameAltaCliente.pack();
+		
+		JInternalFrame frameConsultaCliente = new JInternalFrame("Consultar cliente.");
+		frameConsultaCliente.setClosable(true);
+		frameConsultaCliente.setResizable(true);
+		frameConsultaCliente.setMaximizable(true);
+		frameConsultaCliente.setBounds(0, 0, 55, 34);
+		contentPane.add(frameConsultaCliente);
+		frameConsultaCliente.pack();
+		
+		JInternalFrame frameAltaPedido = new JInternalFrame("Alta pedido.");
+		frameAltaPedido.setClosable(true);
+		frameAltaPedido.setResizable(true);
+		frameAltaPedido.setMaximizable(true);
+		frameAltaPedido.setBounds(0, 0, 55, 34);
+		contentPane.add(frameAltaPedido);
+		frameAltaPedido.getContentPane().add(new AltaPedido());
+		frameAltaPedido.pack();
 	}
 }
