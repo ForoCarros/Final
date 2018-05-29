@@ -18,7 +18,7 @@ public class GestorConsultarArticulo implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.paraUI.crearJInternalFrame(e.getActionCommand());
+		this.paraUI.getContentPane().getComponent(1).setVisible(true);
 	}
 
 }

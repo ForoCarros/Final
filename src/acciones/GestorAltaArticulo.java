@@ -16,7 +16,7 @@ public class GestorAltaArticulo implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.paraUI.crearJInternalFrame(e.getActionCommand());
+		this.paraUI.getContentPane().getComponent(0).setVisible(true);
 	}
 
 }
