@@ -15,8 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 public class AltaArticulo extends JPanel {
-	protected JTextField textField;
-	protected JTextField textField_1;
+	protected JTextField nombre;
+	protected JTextField precio;
 	protected JButton btnAceptar;
 
 	/**
@@ -47,15 +47,15 @@ public class AltaArticulo extends JPanel {
 		gbc_lblNombre.gridy = 2;
 		add(lblNombre, gbc_lblNombre);
 		
-		textField = new JTextField();
+		nombre = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.gridwidth = 3;
 		gbc_textField.insets = new Insets(0, 0, 5, 5);
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.gridx = 2;
 		gbc_textField.gridy = 2;
-		add(textField, gbc_textField);
-		textField.setColumns(10);
+		add(nombre, gbc_textField);
+		nombre.setColumns(10);
 		
 		JLabel lblPrecio = new JLabel("Precio");
 		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
@@ -65,27 +65,35 @@ public class AltaArticulo extends JPanel {
 		gbc_lblPrecio.gridy = 3;
 		add(lblPrecio, gbc_lblPrecio);
 		
-		textField_1 = new JTextField();
+		precio = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField_1.gridx = 2;
 		gbc_textField_1.gridy = 3;
-		add(textField_1, gbc_textField_1);
-		textField_1.setColumns(10);
+		add(precio, gbc_textField_1);
+		precio.setColumns(10);
 		
 		btnAceptar = new JButton("Aceptar");
-		btnAceptar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println(new ParaUI().getSelected().getX());
-			}
-		});
 		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
 		gbc_btnAceptar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAceptar.gridx = 4;
 		gbc_btnAceptar.gridy = 4;
 		add(btnAceptar, gbc_btnAceptar);
-
 	}
+
+	public JTextField getNombre() {
+		return nombre;
+	}
+
+	public JTextField getPrecio() {
+		return precio;
+	}
+
+	public JButton getBtnAceptar() {
+		return btnAceptar;
+	}
+	
+	
 
 }
