@@ -38,15 +38,14 @@ public class Altas {
 	 * @return true o false segun si puede grabar el objeto en el fichero
 	 */
 	public boolean crearArticulo(int idArticulo, String nombre, String descripcion, float precio) {
-		String ruta = "articulo.txt";
 		Articulo articulo = new Articulo(idArticulo, nombre, descripcion, precio);
-		ArrayList<Object> listaArticulo = (ArrayList<Object>) this.logica.dameRuta(ruta);
-		if (listaArticulo == null)
-			listaArticulo = new ArrayList<>();
-		if (!listaArticulo.contains(articulo)) {
-			listaArticulo.add(articulo);
-			return this.logica.grabar(listaArticulo, ruta);
-		}
+		String ruta = "data/articulos/"+idArticulo+".art";
+		TreeMap<String, Integer> indice = new TreeMap<>();
+//		if(this.logica.comprobarArchivoExistente(ruta)) {    ese metodo tiene que ser boolean no???
+//			
+//		}
+		
+		
 		return false;
 	}
 
@@ -84,6 +83,14 @@ public class Altas {
 		String ruta = "pedido.txt";
 		Pedido pedido = new Pedido(numeroPedido, cliente);
 		return this.logica.grabar(pedido, ruta);
+	}
+	
+	/**
+	 * Habria que crear proveedores....y meterlos en su respectivo fichero
+	 * @param nombre
+	 */
+	public void crearProveedor(String nombre) {
+		
 	}
 
 }
