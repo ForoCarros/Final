@@ -3,27 +3,48 @@ package logica;
 import java.io.File;
 import java.io.IOException;
 
+import modelo.acceso.AlmacenCliente;
 import modelo.acceso.DAO;
+import modelo.data.Articulo;
+import modelo.data.Cliente;
+import modelo.data.Pedido;
 
 /**
  * 
  * @author Fernan
+ * @param <T>
+ * @param <T>
+ * @param <K>
  *
  */
 
 public class Logica {
 
 	private DAO<?> dao;
+	private AlmacenCliente almacenCliente;
 
 	public Logica() {
 		this.dao = new DAO<>();
+		this.almacenCliente = new AlmacenCliente("data/clientes");
+	}
+
+	public boolean crear(Cliente cliente) {
+		return almacenCliente.grabar(cliente, cliente.getDniCif());
+	}
+
+	public boolean crear(Articulo articulo) {
+		return true;
+	}
+
+	public boolean crear(Pedido pedido) {
+		return true;
 	}
 
 	/**
 	 * Graba en el archivo que le pasemos el objeto
 	 * 
 	 * @param object
-	 * @param ruta 
+	 * @param ruta
 	 * @return true o false
 	 */
 	public boolean grabar(Object object, String ruta) {
@@ -72,7 +93,7 @@ public class Logica {
 
 	public void comprobarArchivoExistente(String ruta) {
 		File f = new File(ruta);
-		if(!f.exists()) {
+		if (!f.exists()) {
 			try {
 				f.createNewFile();
 			} catch (IOException e) {
