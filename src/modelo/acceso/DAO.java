@@ -1,5 +1,4 @@
-package modelo;
-
+package modelo.acceso;
 
 import java.io.Closeable;
 import java.io.File;
@@ -13,7 +12,7 @@ import java.io.OutputStream;
 
 //Data Access Object
 
-public class DAO<T>  {
+public class DAO<T> {
 	class MyObjectOutputStream extends ObjectOutputStream {
 
 		public MyObjectOutputStream(OutputStream out) throws IOException {

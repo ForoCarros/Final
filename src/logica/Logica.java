@@ -3,7 +3,7 @@ package logica;
 import java.io.File;
 import java.io.IOException;
 
-import modelo.DAO;
+import modelo.acceso.DAO;
 
 /**
  * 

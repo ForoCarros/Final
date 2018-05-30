@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="modelo.Cliente" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/modelo/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="modelo.data.Cliente" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/modelo/data/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="297" width="187" x="2132" y="463"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="modelo.DAO" project="PROYECTO FINAL" file="/PROYECTO FINAL/src/modelo/DAO.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="modelo.acceso.DAO" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/modelo/acceso/DAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="219" x="1042" y="1137"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="modelo.Linea" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/modelo/Linea.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="modelo.data.Linea" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/modelo/data/Linea.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="167" x="1925" y="463"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,8 +100,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="modelo.Pedido" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/modelo/Pedido.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="modelo.data.Pedido" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/modelo/data/Pedido.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="359" x="2028" y="198"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -136,8 +136,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="modelo.Articulo" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/modelo/Articulo.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="16" language="java" name="modelo.data.Articulo" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/modelo/data/Articulo.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="297" width="227" x="1925" y="800"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -145,8 +145,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="modelo.DAO.MyObjectOutputStream" project="PROYECTO FINAL" 
-    file="/PROYECTO FINAL/src/modelo/DAO.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="17" language="java" name="modelo.acceso.DAO.MyObjectOutputStream" project="PROYECTO FINAL" 
+    file="/PROYECTO FINAL/src/modelo/acceso/DAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="211" x="1042" y="1402"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -181,46 +181,46 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="21">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="22" name="cliente">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="23" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="24">    
+  <generalization id="21">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="22">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="25" name="altas">        
+      <attribute id="23" name="altas">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="26" minimum="0" maximum="1">        
+      <multiplicity id="24" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="27">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="28" name="dao">        
+  <association id="25">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="26" name="paraui">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="29" minimum="0" maximum="1">        
+      <multiplicity id="27" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="30">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="17"/>  
-  </nesting>  
+  <association id="28">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="29" name="cliente">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="31">    
     <end type="SOURCE" refId="8" navigable="false">      
       <attribute id="32" name="articulo">        
@@ -234,33 +234,33 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="34">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="35" name="logica">        
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="35" name="dao">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="36" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="37">    
+  <nesting id="37">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="17"/>  
+  </nesting>  
+  <association id="38">    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="38" name="paraui">        
+      <attribute id="39" name="paraui">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="39" minimum="0" maximum="1">        
+      <multiplicity id="40" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
   <association id="41">    
     <end type="SOURCE" refId="7" navigable="false">      
       <attribute id="42" name="paraui">        
@@ -287,26 +287,26 @@
   </association>  
   <association id="47">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="48" name="validador">        
+      <attribute id="48" name="logica">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="49" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="50">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="51" name="paraui">        
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="51" name="validador">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="52" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
