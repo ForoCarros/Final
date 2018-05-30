@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
+import modelo.acceso.AlmacenCliente;
+import modelo.data.Cliente;
 import vista.AltaCliente;
 
 public class listenerBtnAltaCliente implements ActionListener {
@@ -23,8 +25,8 @@ public class listenerBtnAltaCliente implements ActionListener {
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtTelefono().getText()) : "telefono vacia";
 		assert this.paraUI.getValidador().comprobarTelefono(ventana.getTxtTelefono().getText()) : "telefono erroneo";
 		assert this.paraUI.getValidador().comprobarNif(ventana.getTxtNif().getText()) : "nif erroneo";
-		if (this.paraUI.getAltas().crearCliente(ventana.getTxtRazon().getText(), ventana.getTxtNif().getText(),
-				ventana.getTxtDireccion().getText(), ventana.getTxtTelefono().getText())) {
+		if (this.paraUI.getLogica().crear(new Cliente(ventana.getTxtRazon().getText(), ventana.getTxtNif().getText(),
+				ventana.getTxtDireccion().getText(), ventana.getTxtTelefono().getText()))) {
 			ventana.getTxtMensajeAltaCliente().setText("cliente creado");
 		} else {
 			ventana.getTxtMensajeAltaCliente().setText("ERROR");
