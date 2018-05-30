@@ -36,6 +36,7 @@ public class ParaUI extends UI {
 
 	public ParaUI() {
 		super();
+		this.logica = new Logica();
 		this.altas = new Altas(this);
 		this.validador = new Validador();
 		asignarListenerVentana();
