@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
+import vista.AltaArticulo;
+import vista.AltaCliente;
 
 public class listenerAltaArticulo implements ActionListener {
 	
@@ -17,6 +19,7 @@ public class listenerAltaArticulo implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.paraUI.getContentPane().getComponent(0).setVisible(true);
+		AltaArticulo ventana = this.paraUI.getPanelAltaArticulo();
 	}
 
 }
