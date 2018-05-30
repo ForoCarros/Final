@@ -3,6 +3,7 @@ package logica;
 import java.io.File;
 import java.io.IOException;
 
+import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
 import modelo.acceso.DAO;
 import modelo.data.Articulo;
@@ -20,12 +21,14 @@ import modelo.data.Pedido;
 
 public class Logica {
 
-	private DAO<?> dao;
+	private DAO dao;
 	private AlmacenCliente almacenCliente;
+	private AlmacenArticulo almacenArticulo;
 
 	public Logica() {
 		this.dao = new DAO<>();
 		this.almacenCliente = new AlmacenCliente("data/clientes");
+		this.almacenArticulo = new AlmacenArticulo("data/articulos");
 	}
 
 	public boolean crear(Cliente cliente) {
@@ -33,7 +36,7 @@ public class Logica {
 	}
 
 	public boolean crear(Articulo articulo) {
-		return true;
+		return almacenArticulo.grabar(articulo, articulo.getIdArticulo(), articulo.getNombre());
 	}
 
 	public boolean crear(Pedido pedido) {

@@ -6,11 +6,6 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 import control.ParaUI;
-import modelo.Articulo;
-import modelo.Cliente;
-import modelo.DAO;
-import modelo.Linea;
-import modelo.Pedido;
 
 /**
  * 
@@ -38,12 +33,6 @@ public class Altas {
 	 * @return true o false segun si puede grabar el objeto en el fichero
 	 */
 	public boolean crearArticulo(int idArticulo, String nombre, String descripcion, float precio) {
-		Articulo articulo = new Articulo(idArticulo, nombre, descripcion, precio);
-		String ruta = "data/articulos/"+idArticulo+".art";
-		TreeMap<String, Integer> indice = new TreeMap<>();
-//		if(this.logica.comprobarArchivoExistente(ruta)) {    ese metodo tiene que ser boolean no???
-//			
-//		}
 		
 		
 		return false;
@@ -59,14 +48,14 @@ public class Altas {
 	 * @return true o false segun si ha podido grabarlo o no
 	 */
 	public boolean crearCliente(String razonSocial, String dni, String direccion, String telefono) {
-		DAO dao = new DAO();
-		String ruta = "data/clientes/clientes.data";
-		String rutaIndice = "data/clientes/indice.ind";
-		this.logica.comprobarArchivoExistente(ruta);
-		TreeMap<Integer, Cliente> clientes = (TreeMap<Integer, Cliente>) dao.leer(ruta);
-		if(clientes.isEmpty() || clientes.size == 1) {
-			clientes.put(key, value)
-		}
+//		DAO dao = new DAO();
+//		String ruta = "data/clientes/clientes.data";
+//		String rutaIndice = "data/clientes/indice.ind";
+//		this.logica.comprobarArchivoExistente(ruta);
+//		TreeMap<Integer, Cliente> clientes = (TreeMap<Integer, Cliente>) dao.leer(ruta);
+//		if(clientes.isEmpty() || clientes.size == 1) {
+//			clientes.put(key, value)
+//		}
 		return false;
 	}
 
@@ -79,11 +68,12 @@ public class Altas {
 	 * @param numeroPedido
 	 * @return true o false segun si ha podido grabar el pedido en el fichero
 	 */
-	public boolean crearPedido(int numeroPedido, Cliente cliente) {
-		String ruta = "pedido.txt";
-		Pedido pedido = new Pedido(numeroPedido, cliente);
-		return this.logica.grabar(pedido, ruta);
-	}
+//	public boolean crearPedido(int numeroPedido, Cliente cliente) {
+//		String ruta = "pedido.txt";
+//		Pedido pedido = new Pedido(numeroPedido, cliente);
+//		return this.logica.grabar(pedido, ruta);
+//		return true;
+//	}
 	
 	/**
 	 * Habria que crear proveedores....y meterlos en su respectivo fichero
