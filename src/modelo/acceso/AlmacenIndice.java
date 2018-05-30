@@ -1,4 +1,4 @@
-package indizando;
+package modelo.acceso;
 
 import java.util.Map.Entry;
 import java.util.TreeMap;
