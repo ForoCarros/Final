@@ -18,13 +18,13 @@ public class Bajas {
 		this.paraui = paraui;
 	}
 	
-	public void borrarCliente(String nombreCliente) {
+	public void borrarCliente(String lineaCliente) {
 		File inputFile = new File("data\\clientes\\cliente.data");
 		File temporal = new File("data\\clientes\\temporal.data");
 
 		BufferedReader reader = null;
 		BufferedWriter writer = null;
-		String lineaBorrada = nombreCliente;
+		String lineaBorrada = lineaCliente;
 		String lineaActual = "";
 
 		try {
