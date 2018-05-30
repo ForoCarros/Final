@@ -10,21 +10,29 @@ import java.io.IOException;
 import control.ParaUI;
 
 public class Bajas {
-	
+
 	private ParaUI paraui;
 
 	public Bajas(ParaUI paraui) {
 		super();
 		this.paraui = paraui;
 	}
-	
-	public void borrarCliente(String nombreCliente) {
+
+	/**
+	 * Segun el nombre o el nif del cliente, borra la linea entera en la que se
+	 * encuentra en el archivo
+	 * 
+	 * @param lineaCliente
+	 *            String puede ser tanto el nombre como el nif o ambos
+	 */
+
+	public void borrarCliente(String lineaCliente) {
 		File inputFile = new File("data\\clientes\\cliente.data");
 		File temporal = new File("data\\clientes\\temporal.data");
 
 		BufferedReader reader = null;
 		BufferedWriter writer = null;
-		String lineaBorrada = nombreCliente;
+		String lineaBorrada = lineaCliente;
 		String lineaActual = "";
 
 		try {
@@ -52,8 +60,8 @@ public class Bajas {
 		}
 		boolean borrado = inputFile.delete();
 		boolean rename = temporal.renameTo(inputFile);
-		
-		System.out.println("renombrado: "+rename + ", borrado: " + borrado);
+
+		System.out.println("renombrado: " + rename + ", borrado: " + borrado);
 	}
 
 }
