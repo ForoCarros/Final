@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
+import vista.BajaCliente;
 
 public class listenerBtnDeleteCliente implements ActionListener{
 	private ParaUI paraUI;
@@ -15,8 +16,8 @@ public class listenerBtnDeleteCliente implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		BajaCliente ventana = this.paraUI.getPanelBajaCliente();
+		ventana.getTxtMensajeBorrar().setText("cliente borrado");
 	}
 
 }

@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
+import vista.AltaArticulo;
+import vista.ModificarArticulo;
 
 public class listenerBtnModificarArticulo implements ActionListener {
 	private ParaUI paraUI;
@@ -15,8 +17,14 @@ public class listenerBtnModificarArticulo implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-
+		ModificarArticulo ventana = this.paraUI.getPanelModificarArticulo();
+		System.out.println("comprueba modificar");
+		//assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtNuevoPrecio().getText()) : "id vacia";
+		
+		// modificar el precio del articulo
+		
+		ventana.getTxtMensajeModificar().setText("precio modificado");
+		
 	}
 
 }

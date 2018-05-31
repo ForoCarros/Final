@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.ParaUI;
+import vista.AltaPedido;
 
 public class listenerBtnAltaPedido implements ActionListener{
 	private ParaUI paraUI;
@@ -15,7 +16,12 @@ public class listenerBtnAltaPedido implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		AltaPedido ventana = this.paraUI.getPanelAltaPedido();
+		
+		//comprobaciones de todo
+		
+		System.out.println("pedido creado");
+		ventana.getTxtMensajePedido().setText("pedido creado");
 		
 	}
 
