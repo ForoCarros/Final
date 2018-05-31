@@ -36,6 +36,7 @@ public class Logica {
 	}
 
 	public boolean crear(Articulo articulo) {
+		System.out.println("estoy en logica, voy almacen");
 		return almacenArticulo.grabar(articulo, articulo.getIdArticulo(), articulo.getNombre());
 	}
 
