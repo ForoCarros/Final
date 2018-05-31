@@ -23,6 +23,12 @@ public class AlmacenArticulo<T, K> {
 
 	}
 
+	/**
+	 * comprueba si el fichero con la ruta del indice existe
+	 * 
+	 * @param ruta
+	 * @return
+	 */
 	private boolean comprobarExiste(String ruta) {
 		File archivo = new File(ruta);
 		return archivo.exists();
@@ -30,6 +36,19 @@ public class AlmacenArticulo<T, K> {
 
 	private boolean validate() {
 		return this.pathIndice != null && this.pathDatos != null;
+	}
+
+	/**
+	 * devuelve el indice
+	 * 
+	 * @return
+	 */
+	public Object getIndice() {
+		if (comprobarExiste(pathIndice)) {
+			return (TreeMap) new DAO<>().leer(pathIndice);
+		} else {
+			return null;
+		}
 	}
 
 	public T leer(String nombre) {

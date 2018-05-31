@@ -25,7 +25,7 @@ public class AlmacenCliente<T, K> {
 		File ruta = new File(path);
 		File datos = new File(this.pathDatos);
 		File indices = new File(this.pathIndice);
-		if(!ruta.exists()) {
+		if (!ruta.exists()) {
 			ruta.mkdirs();
 		}
 		if (!datos.exists()) {
@@ -85,5 +85,29 @@ public class AlmacenCliente<T, K> {
 			}
 		}
 		return retorno;
+	}
+
+	/**
+	 * devuelve el indice del paquete
+	 * 
+	 * @return
+	 */
+	public Object getIndice() {
+		if (comprobarExiste(pathIndice)) {
+			return (TreeMap) new DAO<T>().leer(pathIndice);
+		} else {
+			return null;
+		}
+	}
+
+	/**
+	 * comprueba si existe el paquete con la ruta dada
+	 * 
+	 * @param ruta
+	 * @return
+	 */
+	private boolean comprobarExiste(String ruta) {
+		File archivo = new File(ruta);
+		return archivo.exists();
 	}
 }

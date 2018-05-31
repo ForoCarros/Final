@@ -86,4 +86,18 @@ public class BajaCliente extends JPanel {
 
 	}
 
+	public JTextField getTxtMensajeBorrar() {
+		return txtMensajeBorrar;
+	}
+
+	public JComboBox getComboClientes() {
+		return comboClientes;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+	
+	
+
 }

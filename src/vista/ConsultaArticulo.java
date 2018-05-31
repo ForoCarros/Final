@@ -110,4 +110,22 @@ public class ConsultaArticulo extends JPanel {
 
 	}
 
+	public JComboBox getComboArticulos() {
+		return comboArticulos;
+	}
+
+	public JTextField getTxtDescripcion() {
+		return txtDescripcion;
+	}
+
+	public JTextField getTxtPrecioActual() {
+		return txtPrecioActual;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+	
+	
+
 }

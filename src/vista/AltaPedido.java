@@ -16,14 +16,14 @@ import java.awt.Color;
 
 public class AltaPedido extends JPanel {
 	protected JTextField txtNumPedido;
-	protected JComboBox comboPedido;
+	protected JComboBox comboClientes;
 	protected JComboBox comboArticulos;
 	protected JTextArea txtLineasPedido;
 	protected JTextField txtPrecioFinal;
 	protected JTextField txtMensajePedido;
 	protected JTextField txtCantidad;
-	private JButton btnAnadirArticulo;
-	private JButton btnCrearPedido;
+	protected JButton btnAnadirLinea;
+	protected JButton btnCrearPedido;
 
 	/**
 	 * Create the panel.
@@ -75,14 +75,14 @@ public class AltaPedido extends JPanel {
 		gbc_lblCliente.gridy = 4;
 		add(lblCliente, gbc_lblCliente);
 		
-		comboPedido = new JComboBox();
+		comboClientes = new JComboBox();
 		GridBagConstraints gbc_comboPedido = new GridBagConstraints();
 		gbc_comboPedido.gridwidth = 2;
 		gbc_comboPedido.insets = new Insets(0, 0, 5, 5);
 		gbc_comboPedido.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboPedido.gridx = 2;
 		gbc_comboPedido.gridy = 4;
-		add(comboPedido, gbc_comboPedido);
+		add(comboClientes, gbc_comboPedido);
 		
 		comboArticulos = new JComboBox();
 		GridBagConstraints gbc_comboArticulos = new GridBagConstraints();
@@ -109,14 +109,14 @@ public class AltaPedido extends JPanel {
 		add(txtCantidad, gbc_txtCantidad);
 		txtCantidad.setColumns(10);
 		
-		btnAnadirArticulo = new JButton("A\u00F1adir");
+		btnAnadirLinea = new JButton("A\u00F1adir");
 		GridBagConstraints gbc_btnAnadirArticulo = new GridBagConstraints();
 		gbc_btnAnadirArticulo.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnAnadirArticulo.gridwidth = 3;
 		gbc_btnAnadirArticulo.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAnadirArticulo.gridx = 1;
 		gbc_btnAnadirArticulo.gridy = 6;
-		add(btnAnadirArticulo, gbc_btnAnadirArticulo);
+		add(btnAnadirLinea, gbc_btnAnadirArticulo);
 		
 		txtLineasPedido = new JTextArea();
 		GridBagConstraints gbc_txtLineasPedido = new GridBagConstraints();
@@ -174,5 +174,43 @@ public class AltaPedido extends JPanel {
 		add(btnCrearPedido, gbc_btnCrearPedido);
 
 	}
+
+	public JTextField getTxtNumPedido() {
+		return txtNumPedido;
+	}
+
+	public JComboBox getComboClientes() {
+		return comboClientes;
+	}
+
+	public JComboBox getComboArticulos() {
+		return comboArticulos;
+	}
+
+	public JTextArea getTxtLineasPedido() {
+		return txtLineasPedido;
+	}
+
+	public JTextField getTxtPrecioFinal() {
+		return txtPrecioFinal;
+	}
+
+	public JTextField getTxtMensajePedido() {
+		return txtMensajePedido;
+	}
+
+	public JTextField getTxtCantidad() {
+		return txtCantidad;
+	}
+
+	public JButton getBtnAnadirLinea() {
+		return btnAnadirLinea;
+	}
+
+	public JButton getBtnCrearPedido() {
+		return btnCrearPedido;
+	}
+	
+	
 
 }
