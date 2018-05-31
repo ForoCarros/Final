@@ -34,6 +34,7 @@ public class AlmacenArticulo<T, K> {
 	}
 
 	public T leer(String nombre) {
+		System.out.println("estoy en almacen leer");
 		T retorno = null;
 		if (comprobarExiste(pathIndice)) {
 			indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
@@ -47,6 +48,7 @@ public class AlmacenArticulo<T, K> {
 	}
 
 	public boolean grabar(T t, Integer numero, String nombre) {
+		System.out.println("estoy en almacen grabar");
 		boolean retorno = false;
 		this.pathDatos.append(numero + ".art");
 		boolean grabar = new DAO<>().grabar(pathDatos.toString(), t);

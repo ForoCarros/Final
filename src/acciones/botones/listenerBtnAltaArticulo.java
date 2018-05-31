@@ -24,10 +24,11 @@ public class listenerBtnAltaArticulo implements ActionListener {
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtDescripcion().getText()) : "descripcion vacia";
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtPrecio().getText()) : "precio vacio";
 		assert !this.paraUI.getValidador().comprobarDigitos(ventana.getTxtPrecio().getText()) : "precio erroneo";
-
+		System.out.println("comprobaciones acabadas");
 		if (this.paraUI.getLogica().crear(new Articulo(Integer.valueOf(ventana.getTxtId().getText()),
 				ventana.getTxtNombre().getText(), ventana.getTxtDescripcion().getText(),
 				Float.valueOf(ventana.getTxtPrecio().getText())))) {
+			System.out.println("articulo creado");
 			ventana.getTxtMensaje().setText("articulo creado");
 		} else {
 			ventana.getTxtMensaje().setText("error al crear");
