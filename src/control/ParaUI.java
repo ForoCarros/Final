@@ -57,8 +57,9 @@ public class ParaUI extends UI {
 	
 	private void asignarListenerBotones() {
 		this.listenerBtnAltaCliente = new listenerBtnAltaCliente(this);
-//		this.listener
+		this.listenerBtnAltaArticulo = new listenerBtnAltaArticulo(this);
 		this.panelAltaCliente.getBtnCrearCliente().addActionListener(this.listenerBtnAltaCliente);
+		this.panelAltaArticulo.getBtnAceptar().addActionListener(this.listenerBtnAltaArticulo);
 	}
 
 	/**
