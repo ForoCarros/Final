@@ -13,9 +13,8 @@ public class AlmacenArticulo<T, K> {
 
 	public AlmacenArticulo(String ruta) {
 		super();
-		this.pathIndice = ruta+"/articulo.data";
+		this.pathIndice = ruta + "/articulo.data";
 		this.pathDatos = new StringBuilder(ruta);
-		dao = new DAO<>();
 		File file = new File(pathDatos.toString());
 		if (!file.exists()) {
 			file.mkdirs();
@@ -50,14 +49,14 @@ public class AlmacenArticulo<T, K> {
 	public boolean grabar(T t, Integer numero, String nombre) {
 		System.out.println("estoy en almacen grabar");
 		boolean retorno = false;
-		this.pathDatos.append(numero + ".art");
-		boolean grabar = new DAO<>().grabar(pathDatos.toString(), t);
+		this.pathDatos.append("/" + numero + ".art");
 		if (comprobarExiste(pathIndice)) {
 			indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
 		}
+		boolean grabar = new DAO<>().grabar(pathDatos.toString(), t);
 		if (grabar) {
 			indice.put((K) nombre, numero);
-			retorno = new DAO<>().grabar(pathIndice, this.indice);
+			retorno = new DAO<>().grabar(this.pathIndice, this.indice);
 		}
 		return retorno;
 	}
