@@ -19,12 +19,13 @@ public class listenerBtnAltaArticulo implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		AltaArticulo ventana = this.paraUI.getPanelAltaArticulo();
-		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtId().getText()) : "id vacia";
+		//assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtId().getText()) : "id vacia";
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtNombre().getText()) : "nombre vacio";
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtDescripcion().getText()) : "descripcion vacia";
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtPrecio().getText()) : "precio vacio";
 		assert !this.paraUI.getValidador().comprobarDigitos(ventana.getTxtPrecio().getText()) : "precio erroneo";
 		System.out.println("comprobaciones acabadas");
+		
 		if (this.paraUI.getLogica().crear(new Articulo(Integer.valueOf(ventana.getTxtId().getText()),
 				ventana.getTxtNombre().getText(), ventana.getTxtDescripcion().getText(),
 				Float.valueOf(ventana.getTxtPrecio().getText())))) {

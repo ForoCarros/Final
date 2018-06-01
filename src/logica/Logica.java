@@ -2,6 +2,8 @@ package logica;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
+import java.util.TreeMap;
 
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
@@ -43,6 +45,26 @@ public class Logica {
 	public boolean crear(Pedido pedido) {
 		return true;
 	}
+	
+	/**
+	 * obtiene el ultimo numero del indice en los articulos
+	 * @return el ultimo numero
+	 */
+	public int dameUltimoNumero() {
+		int numIndice = 0;
+		TreeMap indice = (TreeMap) new AlmacenArticulo<>("./data/articulos").getIndice();
+		Set clave = indice.keySet();
+		numIndice=(clave.size())+1;
+		return numIndice;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * Graba en el archivo que le pasemos el objeto
@@ -106,4 +128,6 @@ public class Logica {
 			}
 		}
 	}
+
+
 }
