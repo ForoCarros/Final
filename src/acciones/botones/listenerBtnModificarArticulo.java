@@ -21,17 +21,17 @@ public class listenerBtnModificarArticulo implements ActionListener {
 		ModificarArticulo ventana = this.paraUI.getPanelModificarArticulo();
 		System.out.println("comprueba modificar");
 		assert !this.paraUI.getValidador().comprobarVacio(ventana.getTxtNuevoPrecio().getText()) : "id vacia";
-		
+
 		// modificar el precio del articulo
-		float nuevoPrecio=Float.valueOf(ventana.getTxtNuevoPrecio().getText());
-		if(this.paraUI.actualizarPrecio((Articulo) ventana.getComboBox().getSelectedItem(),nuevoPrecio)) {
+		float nuevoPrecio = Float.valueOf(ventana.getTxtNuevoPrecio().getText());
+		String nombreArticulo = (String) ventana.getComboBox().getSelectedItem();
+		if (this.paraUI.actualizarPrecio(nombreArticulo, nuevoPrecio)) {
 			ventana.getTxtMensajeModificar().setText("precio modificado");
 			ventana.getTxtNuevoPrecio().setText("");
-		}else {
-			ventana.getTxtMensajeModificar().setText("error");	
+		} else {
+			ventana.getTxtMensajeModificar().setText("error");
 		}
-		
-		
+
 	}
 
 }
