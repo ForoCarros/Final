@@ -5,12 +5,13 @@ import java.awt.Component;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeMap;
-
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
-
 import acciones.botones.listenerBtnAltaArticulo;
 import acciones.botones.listenerBtnAltaCliente;
+import acciones.botones.listenerBtnConsultarArticulo;
+import acciones.botones.listenerBtnDeleteCliente;
+import acciones.botones.listenerBtnModificarArticulo;
 import acciones.ventanas.listenerAltaArticulo;
 import acciones.ventanas.listenerAltaCliente;
 import acciones.ventanas.listenerAltaPedido;
@@ -21,6 +22,7 @@ import logica.Altas;
 import logica.Logica;
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
+import modelo.data.Articulo;
 import utiles.Validador;
 import vista.UI;
 
@@ -38,6 +40,9 @@ public class ParaUI extends UI {
 	private listenerAltaPedido listenerAltaPedido;
 	private listenerBtnAltaArticulo listenerBtnAltaArticulo;
 	private listenerBtnAltaCliente listenerBtnAltaCliente;
+	private listenerBtnModificarArticulo listenerBtnModificarArticulo;
+	private listenerBtnDeleteCliente listenerBtnDeleteCliente;
+	private listenerBtnConsultarArticulo listenerBtnConsultarArticulo;
 	//TODO: listenerBtn
 
 	public ParaUI() {
@@ -68,6 +73,9 @@ public class ParaUI extends UI {
 	private void asignarListenerBotones() {
 		this.listenerBtnAltaCliente = new listenerBtnAltaCliente(this);
 		this.listenerBtnAltaArticulo = new listenerBtnAltaArticulo(this);
+		this.listenerBtnModificarArticulo= new listenerBtnModificarArticulo(this);
+		this.listenerBtnDeleteCliente = new listenerBtnDeleteCliente(this);
+		this.listenerBtnConsultarArticulo = new listenerBtnConsultarArticulo(this);
 		this.listenerModificarArticulo = new listenerModificarArticulo(this);
 		this.listenerBajaCliente = new listenerDeleteCliente(this);
 		this.listenerAltaPedido = new listenerAltaPedido(this);
@@ -75,10 +83,10 @@ public class ParaUI extends UI {
 		
 		this.panelAltaCliente.getBtnCrearCliente().addActionListener(this.listenerBtnAltaCliente);
 		this.panelAltaArticulo.getBtnAceptar().addActionListener(this.listenerBtnAltaArticulo);
-		this.panelModificarArticulo.getBtnActualizarPrecio().addActionListener(this.listenerModificarArticulo);
-		this.panelBajaCliente.getBtnEliminar().addActionListener(listenerBajaCliente);
+		this.panelModificarArticulo.getBtnActualizarPrecio().addActionListener(this.listenerBtnModificarArticulo);
+		this.panelBajaCliente.getBtnEliminar().addActionListener(listenerBtnDeleteCliente);
 		this.panelAltaPedido.getBtnCrearPedido().addActionListener(listenerAltaPedido);
-		this.panelConsultarArticulo.getBtnBuscar().addActionListener(listenerConsultarArticulo);
+		this.panelConsultarArticulo.getBtnBuscar().addActionListener(listenerBtnConsultarArticulo);
 	}
 
 	/**
@@ -175,4 +183,32 @@ public class ParaUI extends UI {
 		}
 		
 	}
+
+	/**
+	 * modifica el precio del articulo elegido en el combo
+	 * @param nuevoPrecio 
+	 * @param object 
+	 * @return true o false, si lo consigue o no
+	 */
+	public boolean actualizarPrecio(Articulo articulo, float nuevoPrecio) {
+		boolean encontrado=false;
+		TreeMap indice = (TreeMap) new AlmacenArticulo<>("./data/articulos").getIndice();
+		if (!(indice == null)) {
+			Set clave = indice.keySet();
+			for (Object articuloIndice : clave) {
+				if(articuloIndice.equals(articulo)) {
+					articulo.insertarNuevoPrecio(nuevoPrecio, false);
+					new AlmacenArticulo<>("./data/articulos").grabar(articulo, articulo.getIdArticulo(), articulo.getNombre());
+					encontrado=true;
+					System.out.println("cambiado");
+					return encontrado;
+				}
+			}
+		}else {
+			System.out.println("nullo y no cambiado");
+			return encontrado;
+		}
+		return encontrado;
+	}
+	
 }
