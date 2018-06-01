@@ -56,6 +56,7 @@ public class AltaArticulo extends JPanel {
 		add(lblId, gbc_lblId);
 
 		txtId = new JTextField();
+		txtId.setEditable(false);
 		GridBagConstraints gbc_txtId = new GridBagConstraints();
 		gbc_txtId.gridwidth = 3;
 		gbc_txtId.insets = new Insets(0, 0, 5, 5);

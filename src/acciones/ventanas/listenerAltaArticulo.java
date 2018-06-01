@@ -20,6 +20,9 @@ public class listenerAltaArticulo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		this.paraUI.getContentPane().getComponent(0).setVisible(true);
 		AltaArticulo ventana = this.paraUI.getPanelAltaArticulo();
+		int numeroIndice=this.paraUI.getLogica().dameUltimoNumero();
+		System.out.println(numeroIndice);
+		ventana.getTxtId().setText(String.valueOf(numeroIndice));
 	}
 
 }
