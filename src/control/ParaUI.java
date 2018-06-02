@@ -23,6 +23,7 @@ import logica.Logica;
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
 import modelo.data.Articulo;
+import modelo.data.Cliente;
 import utiles.Validador;
 import vista.UI;
 
@@ -173,11 +174,8 @@ public class ParaUI extends UI {
 		TreeMap indice = (TreeMap) new AlmacenCliente<>("./data/clientes").getIndice();
 		if (!(indice == null)) {
 			Set clave = indice.keySet();
-			for (Object cliente : clave) {
-
-				// aqui pasa algo.... solo pilla el ultimo cliente que agrego
-
-				comboClientes.addItem(cliente);
+			for (Object clienteClave : clave) {
+				comboClientes.addItem(clienteClave);
 			}
 		} else {
 			System.out.println("combo nulo");
