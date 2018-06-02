@@ -28,6 +28,10 @@ public class listenerBtnAltaCliente implements ActionListener {
 		if (this.paraUI.getLogica().crear(new Cliente(ventana.getTxtRazon().getText(), ventana.getTxtNif().getText(),
 				ventana.getTxtDireccion().getText(), ventana.getTxtTelefono().getText()))) {
 			ventana.getTxtMensajeAltaCliente().setText("cliente creado");
+			ventana.getTxtDireccion().setText("");
+			ventana.getTxtNif().setText("");
+			ventana.getTxtRazon().setText("");
+			ventana.getTxtTelefono().setText("");
 		} else {
 			ventana.getTxtMensajeAltaCliente().setText("ERROR");
 		}
