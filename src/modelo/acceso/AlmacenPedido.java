@@ -44,7 +44,7 @@ public class AlmacenPedido {
 	 * @param valor
 	 *            el valor a guardar.
 	 */
-	private void grabarNumero(int valor) {
+	public void grabarNumero(int valor) {
 		File archivo = new File(pathNUP);
 		FileOutputStream flujoW = null;
 		DataOutputStream conversorW = null;
