@@ -18,7 +18,6 @@ import acciones.ventanas.listenerAltaPedido;
 import acciones.ventanas.listenerConsultarArticulo;
 import acciones.ventanas.listenerDeleteCliente;
 import acciones.ventanas.listenerModificarArticulo;
-import logica.Altas;
 import logica.Logica;
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
@@ -29,7 +28,6 @@ import vista.UI;
 
 public class ParaUI extends UI {
 
-	private Altas altas;
 	private Logica logica;
 	private Validador validador;
 	private listenerAltaArticulo listenerAltaArticulo;
@@ -48,15 +46,10 @@ public class ParaUI extends UI {
 	public ParaUI() {
 		super();
 		this.logica = new Logica();
-		this.altas = new Altas(this);
 		this.validador = new Validador();
 		asignarListenerVentana();
 		asignarListenerBotones();
 		// actualizarTodasVentanas();
-	}
-
-	public Altas getAltas() {
-		return altas;
 	}
 
 	public Logica getLogica() {

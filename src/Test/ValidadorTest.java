@@ -1,12 +1,21 @@
-package utiles;
+package Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
+import utiles.Validador;
 
+/**
+ * 
+ * @author Camacho
+ *
+ */
 class ValidadorTest {
 Validador instancia = new Validador();
 	
