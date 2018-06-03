@@ -5,6 +5,13 @@ import java.io.IOException;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
+/**
+ * 
+ * @author Pablo
+ *
+ * @param <T>
+ * @param <K>
+ */
 public class AlmacenCliente<T, K> {
 	private String pathIndice;
 	private String pathDatos;
@@ -74,7 +81,10 @@ public class AlmacenCliente<T, K> {
 				retorno = true;
 				new DAO<>().grabar(pathIndice, indice);
 			} else {
-				new DAO<>().grabar(pathIndice, indice);
+				//Si no se graba bien actualizamos el indice con la version grabada
+				indice = (TreeMap<K, Integer>) new DAO<>().leer(pathIndice);
+				// nose si esto tiene que grabar si o si!
+				//new DAO<>().grabar(pathIndice, indice);
 			}
 		}
 		return retorno;

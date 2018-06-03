@@ -9,6 +9,11 @@ import java.io.IOException;
 
 import control.ParaUI;
 
+/**
+ * 
+ * @author Adrian
+ *
+ */
 public class Bajas {
 
 	private ParaUI paraui;
