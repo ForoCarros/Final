@@ -1,5 +1,6 @@
 package modelo.acceso;
 
+import static utiles.Rutas.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -8,10 +9,14 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import utiles.Rutas;
+
 public class AlmacenPedido {
 	private DAO dao;
-	private String pathNUP = "numeroUltimoPedido.data";
+	private String pathNUP = Rutas.pathNUP;
 	private String pathPedidos = "./data/pedidos";
+	private String pathPedidosTest = "./Test/testPedidos";
+	private String pathNUPTest = "./Test/"
 
 	public AlmacenPedido() {
 		super();
