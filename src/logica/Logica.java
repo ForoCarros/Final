@@ -26,11 +26,13 @@ public class Logica {
 	private DAO dao;
 	private AlmacenCliente almacenCliente;
 	private AlmacenArticulo almacenArticulo;
+	private Pedido temporal;
 
 	public Logica() {
 		this.dao = new DAO<>();
 		this.almacenArticulo = new AlmacenArticulo("data/articulos");
 		this.almacenCliente = new AlmacenCliente("data/clientes");
+		this.temporal = null;
 	}
 
 	/**	
@@ -157,6 +159,13 @@ public class Logica {
 			}
 		}
 	}
+	
+	public Pedido getTemporal() {
+		return this.temporal;
+	}
 
+	public void setTemporal(Pedido pedido) {
+		this.temporal = pedido;
+	}
 
 }
