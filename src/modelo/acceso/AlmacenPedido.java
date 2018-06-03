@@ -80,7 +80,7 @@ public class AlmacenPedido {
 		try {
 			flujoR = new FileInputStream(archivo);
 			conversorR = new DataInputStream(flujoR);
-			conversorR.readInt();
+			valor = conversorR.readInt();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
