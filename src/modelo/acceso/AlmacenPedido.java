@@ -1,26 +1,20 @@
 package modelo.acceso;
 
-import static utiles.Rutas.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 import utiles.Rutas;
 
 public class AlmacenPedido {
-	private DAO dao;
-	private String pathNUP = Rutas.pathNUP;
-	private String pathPedidos = "./data/pedidos";
-	private String pathPedidosTest = "./Test/testPedidos";
-	private String pathNUPTest = "./Test/"
+	private String pathNUP = Rutas.pathNUPTest;
+	private String pathPedidos = Rutas.pathPedidosTest;
 
 	public AlmacenPedido() {
 		super();
-		this.dao = new DAO<>();
 	}
 
 	/**
