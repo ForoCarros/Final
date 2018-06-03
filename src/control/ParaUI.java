@@ -168,6 +168,9 @@ public class ParaUI extends UI {
 		if (!(indice == null)) {
 			Set clave = indice.keySet();
 			for (Object clienteClave : clave) {
+				//solo necesitamos el dni...hay que convertir el clienteClave en un cliente de verdad
+				//Cliente clienteNew = (Cliente) new AlmacenCliente<>("./data/clientes").obtener(clienteClave);
+				//comboClientes.addItem(clienteNew.getDniCif());
 				comboClientes.addItem(clienteClave);
 			}
 		} else {
