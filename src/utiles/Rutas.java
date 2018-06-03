@@ -14,8 +14,8 @@ public final class Rutas {
 	// - ClientesTest -
 
 	// - ArtículosTest -
-	public final static String pathNUPTest = "./Test/pedidos";
-	public final static String pathPedidosTest = "./Test/pedidos";
+	public final static String pathNUPTest = "./Test/testPedidos/numeroUltimoPedido.data";
+	public final static String pathPedidosTest = "./Test/testPedidos/pedidos";
 
 	/**
 	 * Todas las rutas del programa.
