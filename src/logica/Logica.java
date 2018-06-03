@@ -69,7 +69,7 @@ public class Logica {
 		int numIndice = 0;
 		TreeMap indice = (TreeMap) new AlmacenArticulo<>("./data/articulos").getIndice();
 		Set clave = indice.keySet();
-		numIndice=(clave.size())+1;
+		numIndice=clave.size();
 		return numIndice;
 	}
 }
