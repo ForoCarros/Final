@@ -9,6 +9,7 @@ import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import acciones.botones.listenerBtnAltaArticulo;
 import acciones.botones.listenerBtnAltaCliente;
+import acciones.botones.listenerBtnAnadirLineaPedido;
 import acciones.botones.listenerBtnConsultarArticulo;
 import acciones.botones.listenerBtnDeleteCliente;
 import acciones.botones.listenerBtnModificarArticulo;
@@ -41,6 +42,7 @@ public class ParaUI extends UI {
 	private listenerBtnModificarArticulo listenerBtnModificarArticulo;
 	private listenerBtnDeleteCliente listenerBtnDeleteCliente;
 	private listenerBtnConsultarArticulo listenerBtnConsultarArticulo;
+	private listenerBtnAnadirLineaPedido listenerBtnAnadirLineaPedido;
 
 	public ParaUI() {
 		super();
@@ -72,13 +74,15 @@ public class ParaUI extends UI {
 		this.listenerBajaCliente = new listenerDeleteCliente(this);
 		this.listenerAltaPedido = new listenerAltaPedido(this);
 		this.listenerConsultarArticulo = new listenerConsultarArticulo(this);
+		this.listenerBtnAnadirLineaPedido = new listenerBtnAnadirLineaPedido(this);
 
 		this.panelAltaCliente.getBtnCrearCliente().addActionListener(this.listenerBtnAltaCliente);
 		this.panelAltaArticulo.getBtnAceptar().addActionListener(this.listenerBtnAltaArticulo);
 		this.panelModificarArticulo.getBtnActualizarPrecio().addActionListener(this.listenerBtnModificarArticulo);
-		this.panelBajaCliente.getBtnEliminar().addActionListener(listenerBtnDeleteCliente);
-		this.panelAltaPedido.getBtnCrearPedido().addActionListener(listenerAltaPedido);
-		this.panelConsultarArticulo.getBtnBuscar().addActionListener(listenerBtnConsultarArticulo);
+		this.panelBajaCliente.getBtnEliminar().addActionListener(this.listenerBtnDeleteCliente);
+		this.panelAltaPedido.getBtnCrearPedido().addActionListener(this.listenerAltaPedido);
+		this.panelConsultarArticulo.getBtnBuscar().addActionListener(this.listenerBtnConsultarArticulo);
+		this.panelAltaPedido.getBtnAnadirLinea().addActionListener(this.listenerBtnAnadirLineaPedido);
 	}
 
 	/**
@@ -167,11 +171,6 @@ public class ParaUI extends UI {
 		if (!(indice == null)) {
 			Set clave = indice.keySet();
 			for (Object clienteClave : clave) {
-				// solo necesitamos el dni...hay que convertir el clienteClave en un cliente de
-				// verdad
-				// Cliente clienteNew = (Cliente) new
-				// AlmacenCliente<>("./data/clientes").obtener(clienteClave);
-				// comboClientes.addItem(clienteNew.getDniCif());
 				comboClientes.addItem(clienteClave);
 			}
 		} else {
