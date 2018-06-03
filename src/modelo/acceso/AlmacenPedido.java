@@ -25,11 +25,7 @@ public class AlmacenPedido {
 		File ultimo = new File(this.pathNUP);
 		File carpetaPedidos = new File(this.pathPedidos);
 		if (!carpetaPedidos.exists()) {
-			if (carpetaPedidos.mkdirs()) {
-				System.out.println("Directorio pedidos creado.");
-			}
-		} else {
-			System.out.println("Directorio pedidos existe.");
+			carpetaPedidos.mkdirs();
 		}
 		if (!ultimo.exists()) {
 			try {
