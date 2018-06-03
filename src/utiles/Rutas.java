@@ -2,8 +2,8 @@ package utiles;
 
 public final class Rutas {
 	// - Pedidos -
-	public final String pathNUP = "numeroUltimoPedido.data";
-	public final String pathPedidos = "./data/pedidos";
+	public final static String pathNUP = "numeroUltimoPedido.data";
+	public final static String pathPedidos = "./data/pedidos";
 
 	// - Clientes -
 
@@ -14,6 +14,13 @@ public final class Rutas {
 	// - ClientesTest -
 
 	// - ArtículosTest -
-	public final String pathNUPTest = "./Test/pedidos";
-	public final String pathPedidosTest = "./Test/pedidos";
+	public final static String pathNUPTest = "./Test/pedidos";
+	public final static String pathPedidosTest = "./Test/pedidos";
+
+	/**
+	 * Todas las rutas del programa.
+	 */
+	private Rutas() {
+
+	}
 }
