@@ -9,12 +9,7 @@ import org.junit.jupiter.api.Test;
 class AlmacenPedidoTest {
 	AlmacenPedido almacen = new AlmacenPedido();
 
-	@Ignore
-	void testAlmacenPedido() {
-		//Es el constructor.
-	}
-
-	@Ignore //FUnciona bien
+	@Test //FUnciona bien
 	void testComprobarExistente() {
 		assertTrue(this.almacen.comprobarExistente());
 	}
@@ -29,6 +24,6 @@ class AlmacenPedidoTest {
 
 	@Ignore
 	void testLeerNumero() {
-		assertTrue(true);
+		//Ya ha sido probado indirectamente con grabarNumero.
 	}
 }
