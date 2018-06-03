@@ -7,14 +7,17 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import modelo.data.Pedido;
 import utiles.Rutas;
 
 public class AlmacenPedido {
 	private String pathNUP = Rutas.pathNUPTest;
 	private String pathPedidos = Rutas.pathPedidosTest;
+	private DAO dao;
 
 	public AlmacenPedido() {
 		super();
+		this.dao = new DAO<>();
 	}
 
 	/**
@@ -93,5 +96,13 @@ public class AlmacenPedido {
 			e.printStackTrace();
 		}
 		return valor;
+	}
+
+	public void grabarPedido(Pedido pedido) {
+		
+	}
+	
+	public Pedido leerPedido() {
+		return null;
 	}
 }
