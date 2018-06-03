@@ -7,10 +7,12 @@ import java.util.TreeMap;
 
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
+import modelo.acceso.AlmacenPedido;
 import modelo.acceso.DAO;
 import modelo.data.Articulo;
 import modelo.data.Cliente;
 import modelo.data.Pedido;
+import utiles.Rutas;
 
 /**
  * 
@@ -26,11 +28,13 @@ public class Logica {
 	private DAO dao;
 	private AlmacenCliente almacenCliente;
 	private AlmacenArticulo almacenArticulo;
+	private Pedido temporal;
 
 	public Logica() {
 		this.dao = new DAO<>();
 		this.almacenCliente = new AlmacenCliente("data/clientes");
 		this.almacenArticulo = new AlmacenArticulo("data/articulos");
+		this.temporal = null;
 	}
 
 	/**
@@ -65,6 +69,15 @@ public class Logica {
 	}
 
 	/**
+	 * Retorna el número de pedido que corresponde.
+	 * 
+	 * @return el número de pedido que corresponde, el actual.
+	 */
+	public int dameUltimoNumeroPedido() {
+		return new AlmacenPedido().leerNumero();
+	}
+
+	/**
 	 * obtiene el ultimo numero del indice en los articulos
 	 * 
 	 * @return el ultimo numero
@@ -89,5 +102,13 @@ public class Logica {
 		// referencia en el map? y en el archivo indice?
 
 		return false;
+	}
+
+	public Pedido getTemporal() {
+		return this.temporal;
+	}
+
+	public void setTemporal(Pedido pedido) {
+		this.temporal = pedido;
 	}
 }
