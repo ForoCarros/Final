@@ -23,11 +23,12 @@ class AlmacenPedidoTest {
 	void testGrabarNumero() {
 		this.almacen.grabarNumero(4);
 		assertEquals(4, this.almacen.leerNumero());
+		this.almacen.grabarNumero(585);
+		assertEquals(585, this.almacen.leerNumero());
 	}
 
 	@Ignore
 	void testLeerNumero() {
 		assertTrue(true);
 	}
-
 }
