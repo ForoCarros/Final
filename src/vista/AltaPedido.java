@@ -9,21 +9,21 @@ import java.awt.Insets;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
-import javax.swing.JTextArea;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import javax.swing.JTable;
 
 public class AltaPedido extends JPanel {
 	protected JTextField txtNumPedido;
 	protected JComboBox comboClientes;
 	protected JComboBox comboArticulos;
-	protected JTextArea txtLineasPedido;
 	protected JTextField txtPrecioFinal;
 	protected JTextField txtMensajePedido;
 	protected JTextField txtCantidad;
 	protected JButton btnAnadirLinea;
 	protected JButton btnCrearPedido;
+	protected JTable lineasPedido;
 
 	/**
 	 * Create the panel.
@@ -118,14 +118,14 @@ public class AltaPedido extends JPanel {
 		gbc_btnAnadirArticulo.gridy = 6;
 		add(btnAnadirLinea, gbc_btnAnadirArticulo);
 		
-		txtLineasPedido = new JTextArea();
-		GridBagConstraints gbc_txtLineasPedido = new GridBagConstraints();
-		gbc_txtLineasPedido.gridwidth = 3;
-		gbc_txtLineasPedido.insets = new Insets(0, 0, 5, 5);
-		gbc_txtLineasPedido.fill = GridBagConstraints.BOTH;
-		gbc_txtLineasPedido.gridx = 1;
-		gbc_txtLineasPedido.gridy = 7;
-		add(txtLineasPedido, gbc_txtLineasPedido);
+		lineasPedido = new JTable();
+		GridBagConstraints gbc_lineasPedido = new GridBagConstraints();
+		gbc_lineasPedido.gridwidth = 3;
+		gbc_lineasPedido.insets = new Insets(0, 0, 5, 5);
+		gbc_lineasPedido.fill = GridBagConstraints.BOTH;
+		gbc_lineasPedido.gridx = 1;
+		gbc_lineasPedido.gridy = 7;
+		add(lineasPedido, gbc_lineasPedido);
 		
 		JLabel lblPrecioTotal = new JLabel("Precio Total:");
 		GridBagConstraints gbc_lblPrecioTotal = new GridBagConstraints();
@@ -187,8 +187,8 @@ public class AltaPedido extends JPanel {
 		return comboArticulos;
 	}
 
-	public JTextArea getTxtLineasPedido() {
-		return txtLineasPedido;
+	public JTable getTxtLineasPedido() {
+		return lineasPedido;
 	}
 
 	public JTextField getTxtPrecioFinal() {
@@ -210,7 +210,4 @@ public class AltaPedido extends JPanel {
 	public JButton getBtnCrearPedido() {
 		return btnCrearPedido;
 	}
-	
-	
-
 }
