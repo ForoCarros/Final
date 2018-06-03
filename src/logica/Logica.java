@@ -33,15 +33,30 @@ public class Logica {
 		this.almacenArticulo = new AlmacenArticulo("data/articulos");
 	}
 
+	/**
+	 * graba en el fichero el cliente creado
+	 * @param cliente
+	 * @return
+	 */
 	public boolean crear(Cliente cliente) {
 		return almacenCliente.grabar(cliente, cliente.getDniCif());
 	}
 
+	/**
+	 * graba en el fichero el articulo creado
+	 * @param articulo
+	 * @return
+	 */
 	public boolean crear(Articulo articulo) {
 		System.out.println("estoy en logica, voy almacen");
 		return almacenArticulo.grabar(articulo, articulo.getIdArticulo(), articulo.getNombre());
 	}
 
+	/**
+	 * graba en un fichero el pedido creado
+	 * @param pedido
+	 * @return
+	 */
 	public boolean crear(Pedido pedido) {
 		return true;
 	}
@@ -57,77 +72,4 @@ public class Logica {
 		numIndice=(clave.size())+1;
 		return numIndice;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-
-	/**
-	 * Graba en el archivo que le pasemos el objeto
-	 * 
-	 * @param object
-	 * @param ruta
-	 * @return true o false
-	 */
-	public boolean grabar(Object object, String ruta) {
-		return new DAO<Object>().grabar(ruta, object, true);
-	}
-
-	/**
-	 * Introduce una ruta por parametro y se la da al dao
-	 * 
-	 * @param ruta
-	 * @return
-	 */
-	public Object dameRuta(String ruta) {
-		dao = new DAO<Object>();
-		return dao.leer(ruta);
-	}
-
-	/**
-	 * Devuelve true o false segun si encuentra en el archivo el objeto que buscamos
-	 * 
-	 * @return true o false
-	 */
-	public Object obtener(Object object, String ruta) {
-		dao = new DAO<Object>();
-		Object dummy = null;
-		boolean iguales = false;
-		int contador = 0;
-		do {
-			dao.leer(ruta, contador);
-			iguales = comprobarDuplicado(dummy, object);
-			contador++;
-		} while (iguales = false && dummy != null);
-		return iguales;
-	}
-
-	/**
-	 * Comprueba entre dos objetos si son el mismo
-	 * 
-	 * @param object
-	 * @param object2
-	 * @return true o false
-	 */
-	public boolean comprobarDuplicado(Object object, Object object2) {
-		return object.equals(object2);
-	}
-
-	public void comprobarArchivoExistente(String ruta) {
-		File f = new File(ruta);
-		if (!f.exists()) {
-			try {
-				f.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-
-
 }
