@@ -4,6 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.TreeMap;
 
+/**
+ * 
+ * @author Fernan
+ *
+ * @param <T>
+ * @param <K>
+ */
 public class AlmacenArticulo<T, K> {
 
 	private String pathIndice;
