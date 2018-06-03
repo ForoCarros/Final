@@ -21,20 +21,27 @@ public class AlmacenPedido {
 	 * Comprueba si el directorio data/pedidos existe y si no, lo crea. Igual con el
 	 * archivo ultimoNumeroPedido.data.
 	 */
-	public void comprobarExistente() {
-		File ultimo = new File(pathNUP);
-		File carpetaPedidos = new File(pathPedidos);
+	public boolean comprobarExistente() {
+		File ultimo = new File(this.pathNUP);
+		File carpetaPedidos = new File(this.pathPedidos);
+		if (!carpetaPedidos.exists()) {
+			if (carpetaPedidos.mkdirs()) {
+				System.out.println("Directorio pedidos creado.");
+			}
+		} else {
+			System.out.println("Directorio pedidos existe.");
+		}
 		if (!ultimo.exists()) {
 			try {
-				ultimo.createNewFile();
+				if (ultimo.createNewFile()) {
+					System.out.println("NUP creado.");
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		if (!carpetaPedidos.exists()) {
-			carpetaPedidos.mkdir();
-		}
+		return carpetaPedidos.exists() && ultimo.exists();
 	}
 
 	/**
