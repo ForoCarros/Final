@@ -35,6 +35,7 @@ public class Logica {
 
 	/**
 	 * graba en el fichero el cliente creado
+	 * 
 	 * @param cliente
 	 * @return
 	 */
@@ -44,6 +45,7 @@ public class Logica {
 
 	/**
 	 * graba en el fichero el articulo creado
+	 * 
 	 * @param articulo
 	 * @return
 	 */
@@ -54,22 +56,38 @@ public class Logica {
 
 	/**
 	 * graba en un fichero el pedido creado
+	 * 
 	 * @param pedido
 	 * @return
 	 */
 	public boolean crear(Pedido pedido) {
 		return true;
 	}
-	
+
 	/**
 	 * obtiene el ultimo numero del indice en los articulos
+	 * 
 	 * @return el ultimo numero
 	 */
 	public int dameUltimoNumero() {
 		int numIndice = 0;
 		TreeMap indice = (TreeMap) new AlmacenArticulo<>("./data/articulos").getIndice();
 		Set clave = indice.keySet();
-		numIndice=clave.size();
+		numIndice = clave.size();
 		return numIndice;
+	}
+
+	/**
+	 * elimina el cliente seleccionado en el comboBox
+	 * 
+	 * @param selectedItem
+	 * @return true o false
+	 */
+	public boolean eliminarCliente(Object selectedItem) {
+
+		// esto es un royo...buscas cliente en datos? y lo eliminas? y eliminas su
+		// referencia en el map? y en el archivo indice?
+
+		return false;
 	}
 }

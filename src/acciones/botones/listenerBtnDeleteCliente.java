@@ -17,7 +17,12 @@ public class listenerBtnDeleteCliente implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		BajaCliente ventana = this.paraUI.getPanelBajaCliente();
-		ventana.getTxtMensajeBorrar().setText("cliente borrado");
+		
+		if(this.paraUI.getLogica().eliminarCliente(ventana.getComboClientes().getSelectedItem()))
+			ventana.getTxtMensajeBorrar().setText("cliente borrado");
+		else {
+			ventana.getTxtMensajeBorrar().setText("ERROR");
+		}
 	}
 
 }
