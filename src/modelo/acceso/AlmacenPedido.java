@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.TreeMap;
 
+import modelo.data.Cliente;
 import modelo.data.Pedido;
 import utiles.Rutas;
 
@@ -99,10 +101,20 @@ public class AlmacenPedido {
 	}
 
 	public void grabarPedido(Pedido pedido) {
-		
+
 	}
-	
+
 	public Pedido leerPedido() {
 		return null;
+	}
+
+	public boolean grabar(Cliente cliente, Pedido pedido) {
+		File directorio = new File(this.pathPedidos + "/" + pedido.getCliente().getDniCif());
+		if(!directorio.exists()) {
+			directorio.mkdirs();
+		}
+		File pedidData = new File(this.pathPedidos + "/" + pedido.getCliente().getDniCif() + "/" + pedido.getNumero() + ".ped");
+		return true;
+		
 	}
 }
