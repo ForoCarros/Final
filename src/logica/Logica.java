@@ -33,15 +33,33 @@ public class Logica {
 		this.almacenCliente = new AlmacenCliente("data/clientes");
 	}
 
+	/**	
+	-	 * graba en el fichero el cliente creado	
+	-	 * 	
+	-	 * @param cliente	
+	-	 * @return	
+	-	 */
 	public boolean crear(Cliente cliente) {
 		return almacenCliente.grabar(cliente, cliente.getDniCif());
 	}
 
+	/**	
+	-	 * graba en el fichero el articulo creado	
+	-	 * 	
+	-	 * @param articulo	
+	-	 * @return	
+	-	 */
 	public boolean crear(Articulo articulo) {
 		System.out.println("estoy en logica, voy almacen");
 		return almacenArticulo.grabar(articulo, articulo.getIdArticulo(), articulo.getNombre());
 	}
 
+	/**	
+	-	 * graba en un fichero el pedido creado	
+	-	 * 	
+	-	 * @param pedido	
+	-	 * @return	
+	-	 */
 	public boolean crear(Pedido pedido) {
 		return true;
 	}
@@ -67,11 +85,13 @@ public class Logica {
 		return numIndice;
 	}
 	
+	public boolean eliminarCliente(Object selectedItem) {
 	
+		// esto es un royo...buscas cliente en datos? y lo eliminas? y eliminas su
+		// referencia en el map? y en el archivo indice?
 	
-	
-	
-	
+	return false;
+	}
 	
 	
 
