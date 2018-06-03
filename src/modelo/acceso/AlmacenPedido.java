@@ -11,6 +11,7 @@ import java.io.IOException;
 public class AlmacenPedido {
 	private DAO dao;
 	private String pathNUP = "numeroUltimoPedido.data";
+	private String pathPedidos = "./data/pedidos";
 
 	public AlmacenPedido() {
 		super();
@@ -23,7 +24,7 @@ public class AlmacenPedido {
 	 */
 	public void comprobarExistente() {
 		File ultimo = new File(pathNUP);
-		File carpetaPedidos = new File("./data/pedidos");
+		File carpetaPedidos = new File(pathPedidos);
 		if (!ultimo.exists()) {
 			try {
 				ultimo.createNewFile();
