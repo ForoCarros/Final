@@ -96,12 +96,23 @@ public class Logica {
 	 * @param selectedItem
 	 * @return true o false
 	 */
-	public boolean eliminarCliente(Object selectedItem) {
-
+	public boolean eliminarCliente(Object cliente) {
+		boolean retorno=false;
 		// esto es un royo...buscas cliente en datos? y lo eliminas? y eliminas su
 		// referencia en el map? y en el archivo indice?
-
-		return false;
+		TreeMap indice = (TreeMap) new AlmacenCliente<>("./data/clientes").getIndice();
+		if (!(indice == null)) {
+			Set clave = indice.keySet();
+			for (Object clienteClave : clave) {
+				System.out.println(clienteClave);
+				if(clienteClave.toString().equals(cliente)) {
+					System.out.println("encontrado");
+					//return almacenCliente.borrar(clienteClave);
+					return true;
+				}
+			}
+		}
+		return retorno;
 	}
 
 	public Pedido getTemporal() {
