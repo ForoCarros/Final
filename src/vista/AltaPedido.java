@@ -28,6 +28,7 @@ public class AltaPedido extends JPanel {
 	protected JButton btnCrearPedido;
 	protected JTable lineasPedido;
 	private JScrollPane scrollPane;
+	protected Vector<Vector> rowData;
 
 	/**
 	 * Create the panel.
@@ -122,7 +123,7 @@ public class AltaPedido extends JPanel {
 		gbc_btnAnadirArticulo.gridx = 1;
 		gbc_btnAnadirArticulo.gridy = 6;
 		add(btnAnadirLinea, gbc_btnAnadirArticulo);
-		Vector<Vector> rowData = new Vector<>();
+		rowData = new Vector<>();
 		Vector<String> columnNames = new Vector<>();
 		columnNames.add("Artículo");
 		columnNames.add("Cantidad");
@@ -229,4 +230,13 @@ public class AltaPedido extends JPanel {
 	public JTable getLineasPedido() {
 		return lineasPedido;
 	}
+
+	public Vector<Vector> getRowData() {
+		return rowData;
+	}
+
+	public void setRowData(Vector<Vector> rowData) {
+		this.rowData = rowData;
+	}
+
 }
