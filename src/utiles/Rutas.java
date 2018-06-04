@@ -6,7 +6,9 @@ public final class Rutas {
 	public final static String pathPedidos = "./data/pedidos";
 
 	// - Clientes -
-
+	public final static String pathClientes = "./data/clientes";
+	public final static String pathClientesData = "./data/clientes/clientes.data";
+	public final static String pathClientesIndex = "./data/clientes/clientes.index";
 	// - Artículos -
 
 	// - PedidosTest -

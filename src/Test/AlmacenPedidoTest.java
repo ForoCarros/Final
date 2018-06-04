@@ -1,10 +1,12 @@
-package modelo.acceso;
+package Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
+
+import modelo.acceso.AlmacenPedido;
 
 class AlmacenPedidoTest {
 	AlmacenPedido almacen = new AlmacenPedido();

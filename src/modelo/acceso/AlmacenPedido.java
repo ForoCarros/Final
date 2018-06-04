@@ -6,13 +6,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.TreeMap;
 
+import modelo.data.Cliente;
 import modelo.data.Pedido;
 import utiles.Rutas;
 
 public class AlmacenPedido {
-	private String pathNUP = Rutas.pathNUPTest;
-	private String pathPedidos = Rutas.pathPedidosTest;
+	private String pathNUP = Rutas.pathNUP;
+	private String pathPedidos = Rutas.pathPedidos;
 	private DAO dao;
 
 	public AlmacenPedido() {
@@ -33,7 +35,8 @@ public class AlmacenPedido {
 		if (!ultimo.exists()) {
 			try {
 				if (ultimo.createNewFile()) {
-					System.out.println("NUP creado.");
+					grabarNumero(0);
+					System.out.println("Guardado: " + leerNumero());
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -98,11 +101,26 @@ public class AlmacenPedido {
 		return valor;
 	}
 
-	public void grabarPedido(Pedido pedido) {
-		
+	public boolean grabar(Pedido pedido) {
+		File directorio = new File(this.pathPedidos + "/" + pedido.getCliente().getDniCif());
+		if (!directorio.exists()) {
+			directorio.mkdirs();
+		}
+		File pedidoData = new File(
+				this.pathPedidos + "/" + pedido.getCliente().getDniCif() + "/" + pedido.getNumero() + ".ped");
+		if (this.dao.grabar(
+				this.pathPedidos + "/" + pedido.getCliente().getDniCif() + "/" + pedido.getNumero() + ".ped", pedido)) {
+			incrementarNUP();
+			return true;
+		} else {
+			return false;
+		}
+
 	}
-	
-	public Pedido leerPedido() {
-		return null;
+
+	public void incrementarNUP() {
+		int numero = leerNumero();
+		System.out.println(numero);
+		grabarNumero(numero + 1);
 	}
 }
