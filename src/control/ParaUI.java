@@ -9,6 +9,7 @@ import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import acciones.botones.listenerBtnAltaArticulo;
 import acciones.botones.listenerBtnAltaCliente;
+import acciones.botones.listenerBtnAltaPedido;
 import acciones.botones.listenerBtnAnadirLineaPedido;
 import acciones.botones.listenerBtnConsultarArticulo;
 import acciones.botones.listenerBtnDeleteCliente;
@@ -43,6 +44,7 @@ public class ParaUI extends UI {
 	private listenerBtnDeleteCliente listenerBtnDeleteCliente;
 	private listenerBtnConsultarArticulo listenerBtnConsultarArticulo;
 	private listenerBtnAnadirLineaPedido listenerBtnAnadirLineaPedido;
+	private listenerBtnAltaPedido listenerBtnAltaPedido;
 
 	public ParaUI() {
 		super();
@@ -75,6 +77,7 @@ public class ParaUI extends UI {
 		this.listenerAltaPedido = new listenerAltaPedido(this);
 		this.listenerConsultarArticulo = new listenerConsultarArticulo(this);
 		this.listenerBtnAnadirLineaPedido = new listenerBtnAnadirLineaPedido(this);
+		this.listenerBtnAltaPedido = new listenerBtnAltaPedido(this);
 
 		this.panelAltaCliente.getBtnCrearCliente().addActionListener(this.listenerBtnAltaCliente);
 		this.panelAltaArticulo.getBtnAceptar().addActionListener(this.listenerBtnAltaArticulo);
@@ -83,6 +86,7 @@ public class ParaUI extends UI {
 		this.panelAltaPedido.getBtnCrearPedido().addActionListener(this.listenerAltaPedido);
 		this.panelConsultarArticulo.getBtnBuscar().addActionListener(this.listenerBtnConsultarArticulo);
 		this.panelAltaPedido.getBtnAnadirLinea().addActionListener(this.listenerBtnAnadirLineaPedido);
+		this.panelAltaPedido.getBtnCrearPedido().addActionListener(this.listenerBtnAltaPedido);
 	}
 
 	/**
@@ -199,4 +203,7 @@ public class ParaUI extends UI {
 		return encontrado;
 	}
 
+	public void vaciarVentanaAltaPedido() {
+		this.panelAltaPedido.getLineasPedido().removeAll();
+	}
 }
