@@ -60,16 +60,6 @@ public class AlmacenArticulo<T, K> {
 			return null;
 		}
 	}
-
-	private Integer getIdArticulo(String nombre) {
-		indice = (TreeMap<K, Integer>) getIndice();
-		return indice.get(nombre);
-	}
-	
-	public T getArticulo(String nombre) {
-		pathDatos.append(getArticulo(nombre)+".art");
-		return this.dao.leer(pathDatos.toString());
-	}
 	
 	public T leer(String nombre) {
 		System.out.println("estoy en almacen leer");

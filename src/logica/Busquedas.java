@@ -4,6 +4,7 @@ import control.ParaUI;
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
 import modelo.data.Articulo;
+import modelo.data.Cliente;
 
 public class Busquedas {
 	
@@ -24,8 +25,8 @@ public class Busquedas {
 		return this.paraui.getLogica().buscarArticulo(nombre);
 	}
 	
-	public void buscarCliente() {
-		
+	public Cliente buscarCliente(String razonSocial) {
+		return this.paraui.getLogica().buscarCliente(razonSocial);
 	}
 	
 	public void buscarPedido() {

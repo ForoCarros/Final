@@ -95,7 +95,7 @@ public class AlmacenCliente<T, K> {
 		}
 		return retorno;
 	}
-
+	
 	private void leerIndice() {
 		indice = (TreeMap<K, Integer>) dao.leer(pathIndice);
 	}

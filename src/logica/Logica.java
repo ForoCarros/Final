@@ -64,7 +64,11 @@ public class Logica {
 
 	
 	public Articulo buscarArticulo(String nombre) {
-		return (Articulo)this.almacenArticulo.getArticulo(nombre);
+		return (Articulo)this.almacenArticulo.leer(nombre);
+	}
+	
+	public Cliente buscarCliente(String razonSocial) {
+		return (Cliente)this.almacenCliente.obtener(razonSocial);
 	}
 	
 	/**
