@@ -28,12 +28,14 @@ public class Logica {
 	private DAO dao;
 	private AlmacenCliente almacenCliente;
 	private AlmacenArticulo almacenArticulo;
+	private AlmacenPedido almacenPedido;
 	private Pedido temporal;
 
 	public Logica() {
 		this.dao = new DAO<>();
 		this.almacenCliente = new AlmacenCliente("data/clientes");
 		this.almacenArticulo = new AlmacenArticulo("data/articulos");
+		this.almacenPedido = new AlmacenPedido();
 		this.temporal = null;
 	}
 
@@ -65,7 +67,12 @@ public class Logica {
 	 * @return
 	 */
 	public boolean crear(Pedido pedido) {
-		return true;
+		if (this.almacenPedido.comprobarExistente() && this.almacenPedido.grabar(pedido)) {
+			this.temporal = null;
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -74,6 +81,7 @@ public class Logica {
 	 * @return el número de pedido que corresponde, el actual.
 	 */
 	public int dameUltimoNumeroPedido() {
+		new AlmacenPedido().comprobarExistente();
 		return new AlmacenPedido().leerNumero();
 	}
 
