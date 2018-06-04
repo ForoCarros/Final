@@ -23,13 +23,5 @@ public class Busquedas {
 	public Articulo buscarArticulo(String nombre) {
 		return this.paraui.getLogica().buscarArticulo(nombre);
 	}
-	
-	public void buscarCliente() {
-		
-	}
-	
-	public void buscarPedido() {
-		
-	}
 
 }
