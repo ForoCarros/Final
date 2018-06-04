@@ -106,8 +106,10 @@ public class AlmacenCliente<T, K> {
 		if (indice.containsKey(k)) {
 			Integer posicion = indice.remove(k);
 			if (posicion != null) {
-				retorno = true;
-				// para que no elimine los datos, solo el indice quitamos la linea sta de abajo
+				if (dao.grabar(pathIndice, (T) indice)) {
+					retorno = true;
+				}
+				// para que no elimine los datos, solo el indice, quitamos la linea de abajo
 				// retorno=dao.borrarElemtento(pathDatos,posicion);
 				if (!retorno) {
 					leerIndice();
