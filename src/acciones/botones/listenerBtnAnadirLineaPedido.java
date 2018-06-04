@@ -43,24 +43,18 @@ public class listenerBtnAnadirLineaPedido implements ActionListener {
 		Linea linea = new Linea(articulo, Integer.valueOf(panel.getTxtCantidad().getText()));
 		pedido.insertarLinea(linea);
 		logica.setTemporal(pedido);
-		DefaultTableModel dm = (DefaultTableModel) panel.getLineasPedido().getModel();
-		Vector<Vector> lineaTable = new Vector<>();
-		panel.setRowData(new Vector(toVector(linea)));
+		((DefaultTableModel)panel.getLineasPedido().getModel()).addRow(toObjectArray(linea));
 		this.paraUI.actualizarPrecioVentanaPedido(
 				Float.valueOf(this.paraUI.getPanelAltaPedido().getTxtPrecioFinal().getText())
 						+ articulo.getCurrentPrice());
 	}
 
-	public Vector toVector(Linea obj) {
-		Vector vector = new Vector<>();
+	public Object[] toObjectArray(Linea obj) {
 		String nombre = obj.getArticulo().getNombre();
 		int cantidad = obj.getCantidad();
 		float precio = obj.getArticulo().getCurrentPrice();
 		float total = cantidad * precio;
-		vector.add(nombre);
-		vector.add(cantidad);
-		vector.add(precio);
-		vector.add(total);
-		return vector;
+		Object[] object = {nombre, cantidad, precio, total};
+		return object;
 	}
 }

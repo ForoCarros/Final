@@ -28,7 +28,7 @@ public class AltaPedido extends JPanel {
 	protected JButton btnCrearPedido;
 	protected JTable lineasPedido;
 	private JScrollPane scrollPane;
-	protected Vector<Vector> rowData;
+	public Vector<Vector> rowData;
 
 	/**
 	 * Create the panel.
