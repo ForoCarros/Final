@@ -57,38 +57,88 @@ public class AlmacenCliente<T, K> {
 		return this.pathIndice != null && this.pathDatos != null;
 	}
 
+	
 	public T obtener(K k) {
-		assert k != null;
+		indice = (TreeMap<K, Integer>) dao.leer(pathIndice);
+		if (indice == null) {
+			indice = new TreeMap<>();
+			dao.grabar(pathIndice, indice);
+		}
 		T retorno = null;
-		indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
 		Integer posicion = indice.get(k);
 		if (posicion != null) {
-			retorno = (T) new DAO().leer(pathDatos, posicion);
+			retorno = (T) dao.leer(pathDatos, posicion);
 		}
 		return retorno;
 	}
 
+	/**
+	 * Almacen el elemnto de clase T con Clave K, hay que pasarla
+	 * 
+	 * @param t
+	 *            el objeto a grabar
+	 * @param k
+	 *            la propiedad clave o indice del objeto t
+	 * @return true si ha almacenado y false en caso contrario
+	 */
 	public boolean grabar(T t, K k) {
-		assert k != null && t != null;
 		boolean retorno = false;
+		// miro el ultimo indice. siempre hay un mapa aqui
 		Entry<K, Integer> lastEntry = indice.lastEntry();
 		Integer value = 0;
-		if (lastEntry != null) {
+		// si es el primer elemento lastentry sera null
+		if (lastEntry != null)
 			value = lastEntry.getValue() + 1;
-		}
+		// si al meterlo el valor es null es que NO esta repetido
 		if (indice.put(k, value) == null) {
-			if (new DAO<>().grabar(pathDatos, t, true)) {
+			// si se almacena bien en el archivo de datos
+			if (dao.grabar(pathDatos, t, true)) {
 				retorno = true;
-				new DAO<>().grabar(pathIndice, indice);
+				dao.grabar(pathIndice, indice);
 			} else {
 				//Si no se graba bien actualizamos el indice con la version grabada
-				indice = (TreeMap<K, Integer>) new DAO<>().leer(pathIndice);
-				// nose si esto tiene que grabar si o si!
-				//new DAO<>().grabar(pathIndice, indice);
+				indice = (TreeMap<K, Integer>) dao.leer(pathIndice);
 			}
 		}
 		return retorno;
 	}
+	
+//	public T obtener(K k) {
+//		assert k != null;
+//		T retorno = null;
+//		indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
+//		Integer posicion = indice.get(k);
+//		if (posicion != null) {
+//			retorno = (T) new DAO().leer(pathDatos, posicion);
+//		}
+//		return retorno;
+//	}
+//
+//	public boolean grabar(T t, K k) {
+//		assert k != null && t != null;
+//		boolean retorno = false;
+//		Entry<K, Integer> lastEntry = indice.lastEntry();
+//		Integer value = 0;
+//		if (lastEntry != null) {
+//			value = lastEntry.getValue() + 1;
+//		}
+//		System.out.println(k);
+//		System.out.println(value);
+//		if (indice.put(k, value) == null) {
+//			if (new DAO<>().grabar(pathDatos, t, true)) {
+//				retorno = true;
+//				new DAO<>().grabar(pathIndice, indice);
+//			} 
+////			else {
+////				//Si no se graba bien actualizamos el indice con la version grabada
+////				indice = (TreeMap<K, Integer>) new DAO<>().leer(pathIndice);
+////				// nose si esto tiene que grabar si o si!
+////				//new DAO<>().grabar(pathIndice, indice);
+////			}
+//			System.out.println(indice);
+//		}
+//		return retorno;
+//	}
 
 	/**
 	 * devuelve el indice del paquete

@@ -1,9 +1,13 @@
 package Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Assert;
 import org.junit.Ignore;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import modelo.acceso.AlmacenArticulo;
 import modelo.data.Articulo;
