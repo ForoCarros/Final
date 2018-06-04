@@ -180,15 +180,15 @@ public class UI extends JFrame {
 		frameAltaPedido.getContentPane().add(this.panelAltaPedido);
 		frameAltaPedido.pack();
 		
-		JInternalFrame frameConsultaCliente = new JInternalFrame("Consulta Cliente.");
-		frameConsultaCliente.setClosable(true);
-		frameConsultaCliente.setResizable(true);
-		frameConsultaCliente.setMaximizable(true);
-		frameConsultaCliente.setBounds(0,0,55,34);
-		frameConsultaCliente.setName("Consulta Cliente");
-		contentPane.add(frameConsultaCliente);
-		frameConsultaCliente.getContentPane().add(this.panelConsultarCliente);
-		frameConsultaArticulo.pack();
+//		JInternalFrame frameConsultaCliente = new JInternalFrame("Consulta Cliente.");
+//		frameConsultaCliente.setClosable(true);
+//		frameConsultaCliente.setResizable(true);
+//		frameConsultaCliente.setMaximizable(true);
+//		frameConsultaCliente.setBounds(0,0,55,34);
+//		frameConsultaCliente.setName("Consulta Cliente");
+//		contentPane.add(frameConsultaCliente);
+//		frameConsultaCliente.getContentPane().add(this.panelConsultarCliente);
+//		frameConsultaArticulo.pack();
 	}
 
 	public AltaArticulo getPanelAltaArticulo() {
