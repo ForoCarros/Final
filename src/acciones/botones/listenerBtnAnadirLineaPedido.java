@@ -45,7 +45,7 @@ public class listenerBtnAnadirLineaPedido implements ActionListener {
 		logica.setTemporal(pedido);
 		DefaultTableModel dm = (DefaultTableModel) panel.getLineasPedido().getModel();
 		Vector<Vector> lineaTable = new Vector<>();
-		this.paraUI.getPanelAltaPedido().setRowData(rowData);
+		panel.setRowData(new Vector(toVector(linea)));
 		this.paraUI.actualizarPrecioVentanaPedido(
 				Float.valueOf(this.paraUI.getPanelAltaPedido().getTxtPrecioFinal().getText())
 						+ articulo.getCurrentPrice());
