@@ -25,8 +25,8 @@ public class Busquedas {
 		return this.paraui.getLogica().buscarArticulo(nombre);
 	}
 	
-	public Cliente buscarCliente(String razonSocial) {
-		return this.paraui.getLogica().buscarCliente(razonSocial);
+	public Cliente buscarCliente(String dni) {
+		return this.paraui.getLogica().buscarCliente(dni);
 	}
 	
 	public void buscarPedido() {
