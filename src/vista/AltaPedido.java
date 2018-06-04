@@ -150,6 +150,7 @@ public class AltaPedido extends JPanel {
 		add(lblPrecioTotal, gbc_lblPrecioTotal);
 
 		txtPrecioFinal = new JTextField();
+		txtPrecioFinal.setText("0.0");
 		txtPrecioFinal.setEditable(false);
 		txtPrecioFinal.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_txtPrecioFinal = new GridBagConstraints();

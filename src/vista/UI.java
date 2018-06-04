@@ -41,6 +41,7 @@ public class UI extends JFrame {
 	protected AltaCliente panelAltaCliente;
 	protected BajaCliente panelBajaCliente;
 	protected AltaPedido panelAltaPedido;
+	protected ConsultaCliente panelConsultarCliente;
 
 	/**
 	 * Create the frame.
@@ -115,6 +116,7 @@ public class UI extends JFrame {
 		this.panelAltaCliente = new AltaCliente();
 		this.panelBajaCliente = new BajaCliente();
 		this.panelAltaPedido = new AltaPedido();
+		this.panelConsultarCliente = new ConsultaCliente();
 	}
 
 	private void crearVentanas() {
@@ -177,6 +179,16 @@ public class UI extends JFrame {
 		contentPane.add(frameAltaPedido);
 		frameAltaPedido.getContentPane().add(this.panelAltaPedido);
 		frameAltaPedido.pack();
+		
+		JInternalFrame frameConsultaCliente = new JInternalFrame("Consulta Cliente.");
+		frameConsultaCliente.setClosable(true);
+		frameConsultaCliente.setResizable(true);
+		frameConsultaCliente.setMaximizable(true);
+		frameConsultaCliente.setBounds(0,0,55,34);
+		frameConsultaCliente.setName("Consulta Cliente");
+		contentPane.add(frameConsultaCliente);
+		frameConsultaCliente.getContentPane().add(this.panelConsultarCliente);
+		frameConsultaArticulo.pack();
 	}
 
 	public AltaArticulo getPanelAltaArticulo() {
@@ -201,6 +213,10 @@ public class UI extends JFrame {
 
 	public AltaPedido getPanelAltaPedido() {
 		return panelAltaPedido;
+	}
+	
+	public ConsultaCliente getPanelConsultarCliente() {
+		return panelConsultarCliente;
 	}
 
 }
