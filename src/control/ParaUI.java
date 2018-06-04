@@ -7,6 +7,8 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
+import javax.swing.table.DefaultTableModel;
+
 import acciones.botones.listenerBtnAltaArticulo;
 import acciones.botones.listenerBtnAltaCliente;
 import acciones.botones.listenerBtnAltaPedido;
@@ -204,6 +206,15 @@ public class ParaUI extends UI {
 	}
 
 	public void vaciarVentanaAltaPedido() {
-		this.panelAltaPedido.getLineasPedido().removeAll();
+		DefaultTableModel modelo = (DefaultTableModel) this.panelAltaPedido.getLineasPedido().getModel();
+		int filas = modelo.getRowCount();
+		for (int i = filas - 1; i >= 0; i--) {
+			modelo.removeRow(i);
+		}
+		this.panelAltaPedido.getTxtPrecioFinal().setText("0.0");
+	}
+
+	public void actualizarPrecioVentanaPedido(float precio) {
+		this.panelAltaPedido.getTxtPrecioFinal().setText(String.valueOf(precio));
 	}
 }

@@ -28,6 +28,7 @@ public class AltaPedido extends JPanel {
 	protected JButton btnCrearPedido;
 	protected JTable lineasPedido;
 	private JScrollPane scrollPane;
+	public Vector<Vector> rowData;
 
 	/**
 	 * Create the panel.
@@ -122,7 +123,7 @@ public class AltaPedido extends JPanel {
 		gbc_btnAnadirArticulo.gridx = 1;
 		gbc_btnAnadirArticulo.gridy = 6;
 		add(btnAnadirLinea, gbc_btnAnadirArticulo);
-		Vector<Vector> rowData = new Vector<>();
+		rowData = new Vector<>();
 		Vector<String> columnNames = new Vector<>();
 		columnNames.add("Artículo");
 		columnNames.add("Cantidad");
@@ -150,6 +151,7 @@ public class AltaPedido extends JPanel {
 		add(lblPrecioTotal, gbc_lblPrecioTotal);
 
 		txtPrecioFinal = new JTextField();
+		txtPrecioFinal.setText("0.0");
 		txtPrecioFinal.setEditable(false);
 		txtPrecioFinal.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_txtPrecioFinal = new GridBagConstraints();
@@ -228,4 +230,13 @@ public class AltaPedido extends JPanel {
 	public JTable getLineasPedido() {
 		return lineasPedido;
 	}
+
+	public Vector<Vector> getRowData() {
+		return rowData;
+	}
+
+	public void setRowData(Vector<Vector> rowData) {
+		this.rowData = rowData;
+	}
+
 }
