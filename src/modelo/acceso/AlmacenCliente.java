@@ -53,7 +53,6 @@ public class AlmacenCliente<T, K> {
 		}
 	}
 
-
 	private boolean validate() {
 		return this.pathIndice != null && this.pathDatos != null;
 	}
@@ -90,7 +89,7 @@ public class AlmacenCliente<T, K> {
 				retorno = true;
 				dao.grabar(pathIndice, (T) indice);
 			} else {
-				//Si no se graba bien actualizamos el indice con la version grabada
+				// Si no se graba bien actualizamos el indice con la version grabada
 				leerIndice();
 			}
 		}
@@ -100,15 +99,17 @@ public class AlmacenCliente<T, K> {
 	private void leerIndice() {
 		indice = (TreeMap<K, Integer>) dao.leer(pathIndice);
 	}
-	
-	public boolean borrar(K k){
+
+	public boolean borrar(K k) {
 		leerIndice();
-		boolean retorno=false;
-		if(indice.containsKey(k)){
-			Integer posicion=indice.remove(k);
-			if(posicion!=null){
-				retorno=dao.borrarElemtento(pathDatos,posicion);
-				if(!retorno){
+		boolean retorno = false;
+		if (indice.containsKey(k)) {
+			Integer posicion = indice.remove(k);
+			if (posicion != null) {
+				retorno = true;
+				// para que no elimine los datos, solo el indice quitamos la linea sta de abajo
+				// retorno=dao.borrarElemtento(pathDatos,posicion);
+				if (!retorno) {
 					leerIndice();
 				}
 			}
