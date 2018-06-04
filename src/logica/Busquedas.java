@@ -3,16 +3,15 @@ package logica;
 import control.ParaUI;
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
+import modelo.data.Articulo;
 
 public class Busquedas {
 	
 	private ParaUI paraui;
-	private Logica logica;
 	
 	public Busquedas(ParaUI paraui) {
 		super();
 		this.paraui = paraui;
-		this.logica = new Logica();
 	}
 	
 	
@@ -21,8 +20,8 @@ public class Busquedas {
 	 */
 	
 	
-	public void buscarArticulo() {
-		
+	public Articulo buscarArticulo(String nombre) {
+		return this.paraui.getLogica().buscarArticulo(nombre);
 	}
 	
 	public void buscarCliente() {

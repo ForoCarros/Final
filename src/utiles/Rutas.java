@@ -10,7 +10,8 @@ public final class Rutas {
 	public final static String pathClientesData = "./data/clientes/clientes.data";
 	public final static String pathClientesIndex = "./data/clientes/clientes.index";
 	// - Artículos -
-
+	public final static String pathArticulos = "./data/articulos";
+	public final static String pathArticulosData = "./data/articulos/articulo.data";
 	// - PedidosTest -
 
 	// - ClientesTest -

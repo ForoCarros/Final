@@ -14,7 +14,7 @@ public class listenerBtnConsultarArticulo implements ActionListener {
 		super();
 		this.paraUI = paraUI;
 	}
-
+	//ESTÁ HECHO EN BASE A QUE EL .getSelectedItem() DEL COMBOBOX RETORNA UN STRING, OSEA QUE LO MISMO HAY QUE CAMBIARLO
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		ConsultaArticulo ventana = this.paraUI.getPanelConsultarArticulo();

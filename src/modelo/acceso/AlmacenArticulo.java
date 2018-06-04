@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.TreeMap;
 
+import modelo.data.Articulo;
+import utiles.Rutas;
+
 /**
  * 
  * @author Fernan
@@ -58,6 +61,16 @@ public class AlmacenArticulo<T, K> {
 		}
 	}
 
+	private Integer getIdArticulo(String nombre) {
+		indice = (TreeMap<K, Integer>) getIndice();
+		return indice.get(nombre);
+	}
+	
+	public T getArticulo(String nombre) {
+		pathDatos.append(getArticulo(nombre)+".art");
+		return this.dao.leer(pathDatos.toString());
+	}
+	
 	public T leer(String nombre) {
 		System.out.println("estoy en almacen leer");
 		T retorno = null;
@@ -71,6 +84,8 @@ public class AlmacenArticulo<T, K> {
 		}
 		return retorno;
 	}
+	
+	
 
 	public boolean grabar(T t, Integer numero, String nombre) {
 		System.out.println("estoy en almacen grabar");
