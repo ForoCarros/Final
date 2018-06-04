@@ -96,18 +96,28 @@ public class AlmacenCliente<T, K> {
 		return retorno;
 	}
 
+	/**
+	 * lee el indice del path
+	 */
 	private void leerIndice() {
 		indice = (TreeMap<K, Integer>) dao.leer(pathIndice);
 	}
 
+	/**
+	 * Borra el objeto pasado y lo busca en el path
+	 * @param k
+	 * @return
+	 */
 	public boolean borrar(K k) {
 		leerIndice();
 		boolean retorno = false;
 		if (indice.containsKey(k)) {
 			Integer posicion = indice.remove(k);
 			if (posicion != null) {
-				retorno = true;
-				// para que no elimine los datos, solo el indice quitamos la linea sta de abajo
+				if (dao.grabar(pathIndice, (T) indice)) {
+					retorno = true;
+				}
+				// para que no elimine los datos, solo el indice, quitamos la linea de abajo
 				// retorno=dao.borrarElemtento(pathDatos,posicion);
 				if (!retorno) {
 					leerIndice();

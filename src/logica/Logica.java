@@ -1,18 +1,14 @@
 package logica;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Set;
 import java.util.TreeMap;
 
 import modelo.acceso.AlmacenArticulo;
 import modelo.acceso.AlmacenCliente;
 import modelo.acceso.AlmacenPedido;
-import modelo.acceso.DAO;
 import modelo.data.Articulo;
 import modelo.data.Cliente;
 import modelo.data.Pedido;
-import utiles.Rutas;
 
 /**
  * 
@@ -25,13 +21,11 @@ import utiles.Rutas;
 
 public class Logica {
 
-	private DAO dao;
 	private AlmacenCliente almacenCliente;
 	private AlmacenArticulo almacenArticulo;
 	private Pedido temporal;
 
 	public Logica() {
-		this.dao = new DAO<>();
 		this.almacenCliente = new AlmacenCliente("data/clientes");
 		this.almacenArticulo = new AlmacenArticulo("data/articulos");
 		this.temporal = null;
@@ -68,6 +62,15 @@ public class Logica {
 		return true;
 	}
 
+	
+	public Articulo buscarArticulo(String nombre) {
+		return (Articulo)this.almacenArticulo.leer(nombre);
+	}
+	
+	public Cliente buscarCliente(String dni) {
+		return (Cliente)this.almacenCliente.obtener(dni);
+	}
+	
 	/**
 	 * Retorna el número de pedido que corresponde.
 	 * 
@@ -114,7 +117,7 @@ public class Logica {
 		}
 		return retorno;
 	}
-
+	
 	public Pedido getTemporal() {
 		return this.temporal;
 	}

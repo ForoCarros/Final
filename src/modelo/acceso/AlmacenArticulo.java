@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.TreeMap;
 
+import modelo.data.Articulo;
+import utiles.Rutas;
+
 /**
  * 
  * @author Fernan
@@ -57,7 +60,7 @@ public class AlmacenArticulo<T, K> {
 			return null;
 		}
 	}
-
+	
 	public T leer(String nombre) {
 		System.out.println("estoy en almacen leer");
 		T retorno = null;
@@ -71,6 +74,8 @@ public class AlmacenArticulo<T, K> {
 		}
 		return retorno;
 	}
+	
+	
 
 	public boolean grabar(T t, Integer numero, String nombre) {
 		System.out.println("estoy en almacen grabar");

@@ -54,7 +54,6 @@ public class ParaUI extends UI {
 		this.validador = new Validador();
 		asignarListenerVentana();
 		asignarListenerBotones();
-		// actualizarTodasVentanas();
 	}
 
 	public Logica getLogica() {
@@ -107,14 +106,6 @@ public class ParaUI extends UI {
 		this.mntmAltaCliente.addActionListener(this.listenerAltaCliente);
 		this.mntmBajaCliente.addActionListener(this.listenerBajaCliente);
 		this.mntmAltaPedido.addActionListener(this.listenerAltaPedido);
-	}
-
-	/**
-	 * Esto nos hace falta como el comer....
-	 * 
-	 */
-	public void actualizarTodasVentanas() {
-
 	}
 
 	/**
