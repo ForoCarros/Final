@@ -8,7 +8,7 @@ public class Cliente implements Serializable {
 	private String direccion;
 	private String telefono;
 
-	public Cliente(String dniCif, String razonSocial, String direccion, String telefono) {
+	public Cliente(String razonSocial, String dniCif,  String direccion, String telefono) {
 		super();
 		this.dniCif = dniCif;
 		this.razonSocial = razonSocial;

@@ -34,16 +34,18 @@ public class listenerBtnAnadirLineaPedido implements ActionListener {
 		assert !panel.getTxtCantidad().getText().isEmpty() : "Cantidad igual o inferior a 0";
 		Logica logica = this.paraUI.getLogica();
 		if (logica.getTemporal() == null) {
+			Cliente cliente = (Cliente) new AlmacenCliente<>("./data/clientes").obtener(panel.getComboClientes().getSelectedItem());
 			logica.setTemporal(
-					new Pedido(logica.dameUltimoNumeroPedido(), new Cliente("12345678C", "test", "asd", "654987321")));
+					new Pedido(logica.dameUltimoNumeroPedido(), cliente));
 		}
+		System.out.println(((Cliente) panel.getComboClientes().getSelectedItem()));
 		Pedido pedido = logica.getTemporal();
 		Articulo articulo = (Articulo) new AlmacenArticulo<>("./data/articulos/")
 				.leer((String) (panel.getComboArticulos().getSelectedItem()));
 		Linea linea = new Linea(articulo, Integer.valueOf(panel.getTxtCantidad().getText()));
 		pedido.insertarLinea(linea);
 		logica.setTemporal(pedido);
-		((DefaultTableModel)panel.getLineasPedido().getModel()).addRow(toObjectArray(linea));
+		((DefaultTableModel) panel.getLineasPedido().getModel()).addRow(toObjectArray(linea));
 		this.paraUI.actualizarPrecioVentanaPedido(
 				Float.valueOf(this.paraUI.getPanelAltaPedido().getTxtPrecioFinal().getText())
 						+ articulo.getCurrentPrice());
@@ -54,7 +56,7 @@ public class listenerBtnAnadirLineaPedido implements ActionListener {
 		int cantidad = obj.getCantidad();
 		float precio = obj.getArticulo().getCurrentPrice();
 		float total = cantidad * precio;
-		Object[] object = {nombre, cantidad, precio, total};
+		Object[] object = { nombre, cantidad, precio, total };
 		return object;
 	}
 }
