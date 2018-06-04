@@ -33,6 +33,7 @@ public class listenerBtnAnadirLineaPedido implements ActionListener {
 		assert !panel.getTxtCantidad().getText().isEmpty() : "Cantidad igual o interior a 0";
 		Logica logica = this.paraUI.getLogica();
 		if (logica.getTemporal() == null) {
+			System.out.println("listenerBtnAnadirLineaPedido > actionPerformed >> logica.getTemporal() == null");
 			logica.setTemporal(new Pedido(logica.dameUltimoNumeroPedido(),
 					new Cliente("12345678C", "test", "asd", "654987321")));
 		}
