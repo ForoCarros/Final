@@ -22,7 +22,7 @@ public class AlmacenCliente<T, K> {
 		super();
 		this.pathIndice = ruta + "/clientes.index";
 		this.pathDatos = ruta + "/clientes.data";
-		comprobarExistente(ruta);
+		//comprobarExistente(ruta);
 		assert validate();
 		this.indice = new TreeMap<>();
 		dao = new DAO<>();
@@ -83,6 +83,10 @@ public class AlmacenCliente<T, K> {
 	public boolean grabar(T t, K k) {
 		boolean retorno = false;
 		leerIndice();
+		if (indice == null) {
+			indice = new TreeMap<>();
+			dao.grabar(pathIndice, (T) indice);
+		}
 		Integer value = indice.size();
 		if (indice.put(k, value) == null) {
 			// si se almacena bien en el archivo de datos
