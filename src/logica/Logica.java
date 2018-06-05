@@ -59,7 +59,7 @@ public class Logica {
 	 * @return
 	 */
 	public boolean crear(Pedido pedido) {
-		return true;
+		return new AlmacenPedido().grabar(pedido);
 	}
 
 	
