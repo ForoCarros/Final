@@ -169,6 +169,10 @@ public class ParaUI extends UI {
 			Set clave = indice.keySet();
 			for (Object clienteClave : clave) {
 				comboClientes.addItem(clienteClave);
+				
+				// podria ser asi pero no....peta todo
+//				Cliente cliente = (Cliente) new AlmacenCliente<>("./data/clientes").obtener(clienteClave);
+//				comboClientes.addItem(cliente.getDniCif());
 			}
 		} else {
 			System.out.println("combo nulo");
