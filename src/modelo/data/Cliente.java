@@ -2,7 +2,7 @@ package modelo.data;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable {
+public class Cliente implements Serializable,Comparable<Cliente> ,Keyable<String> {
 	private String dniCif;
 	private String razonSocial;
 	private String direccion;
@@ -59,4 +59,15 @@ public class Cliente implements Serializable {
 	public String toString() {
 		return razonSocial;
 	}
+
+	@Override
+	public String getKey() {
+		return dniCif;
+	}
+
+	@Override
+	public int compareTo(Cliente o) {
+		return dniCif.compareTo(o.dniCif);
+	}
+
 }

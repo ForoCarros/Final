@@ -101,8 +101,6 @@ public class Logica {
 	 */
 	public boolean eliminarCliente(Object cliente) {
 		boolean retorno=false;
-		// esto es un royo...buscas cliente en datos? y lo eliminas? y eliminas su
-		// referencia en el map? y en el archivo indice?
 		TreeMap indice = (TreeMap) new AlmacenCliente<>("./data/clientes").getIndice();
 		if (!(indice == null)) {
 			Set clave = indice.keySet();
@@ -110,8 +108,8 @@ public class Logica {
 				System.out.println(clienteClave);
 				if(clienteClave.toString().equals(cliente)) {
 					System.out.println("encontrado");
-					//return almacenCliente.borrar(clienteClave);
-					return true;
+					return almacenCliente.borrar(clienteClave);
+					//return true;
 				}
 			}
 		}
