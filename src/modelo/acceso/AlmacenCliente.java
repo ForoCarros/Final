@@ -136,6 +136,14 @@ public class AlmacenCliente<T, K> {
 	public Object getIndice() {
 		return (TreeMap) new DAO<>().leer(pathIndice);
 	}
+	/**
+	 * devuelve el indice del paquete
+	 * 
+	 * @return
+	 */
+	public Object getMap() {
+		return (TreeMap) new DAO<T>().leer(pathIndice);
+	}
 
 	/**
 	 * comprueba si existe el paquete con la ruta dada
