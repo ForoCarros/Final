@@ -21,8 +21,7 @@ public class listenerBtnAltaPedido implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		AltaPedido ventana = this.paraUI.getPanelAltaPedido();
 		ventana.getTxtMensajePedido().setText("pedido creado");
-		Pedido pedido = this.paraUI.getLogica().getTemporal();
-		this.paraUI.getLogica().crear(pedido);
+		this.paraUI.getLogica().crear(this.paraUI.getLogica().getTemporal());
 		this.paraUI.vaciarVentanaAltaPedido();
 	}
 

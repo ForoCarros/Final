@@ -28,28 +28,26 @@ public class listenerBtnAnadirLineaPedido implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		AltaPedido panel = this.paraUI.getPanelAltaPedido();
-//		assert panel.getComboClientes() != null : "Cliente nulo";
-//		assert panel.getComboArticulos() != null : "Artículo nulo";
-//		assert !panel.getTxtCantidad().getText().isEmpty() : "Cantidad igual o inferior a 0";
-//		Logica logica = this.paraUI.getLogica();
-//		if (logica.getTemporal() == null) {
-//			Cliente cliente = (Cliente) new AlmacenCliente<>("./data/clientes")
-//					.obtener(( panel.getComboClientes().getSelectedItem()));
-//			logica.setTemporal(new Pedido(logica.dameUltimoNumeroPedido(), cliente));
-//		}
-//		Pedido pedido = logica.getTemporal();
-//		Articulo articulo = (Articulo) new AlmacenArticulo<>("./data/articulos/")
-//				.leer((String) (panel.getComboArticulos().getSelectedItem()));
-//		Linea linea = new Linea(articulo, Integer.valueOf(panel.getTxtCantidad().getText()));
-//		pedido.insertarLinea(linea);
-//		logica.setTemporal(pedido);
-//		((DefaultTableModel) panel.getLineasPedido().getModel()).addRow(toObjectArray(linea));
-//		this.paraUI.actualizarPrecioVentanaPedido(
-//				Float.valueOf(this.paraUI.getPanelAltaPedido().getTxtPrecioFinal().getText())
-//						+ articulo.getCurrentPrice());
-		
-		System.out.println(new AlmacenCliente<>("./data/clientes").obtener("Pablo"));
+		AltaPedido panel = this.paraUI.getPanelAltaPedido();
+		assert panel.getComboClientes() != null : "Cliente nulo";
+		assert panel.getComboArticulos() != null : "Artículo nulo";
+		assert !panel.getTxtCantidad().getText().isEmpty() : "Cantidad igual o inferior a 0";
+		Logica logica = this.paraUI.getLogica();
+		if (logica.getTemporal() == null) {
+			Cliente cliente = (Cliente) new AlmacenCliente<>("./data/clientes")
+					.obtener((panel.getComboClientes().getSelectedItem()));
+			logica.setTemporal(new Pedido(logica.dameUltimoNumeroPedido(), cliente));
+		}
+		Pedido pedido = logica.getTemporal();
+		Articulo articulo = (Articulo) new AlmacenArticulo<>("./data/articulos/")
+				.leer((String) (panel.getComboArticulos().getSelectedItem()));
+		Linea linea = new Linea(articulo, Integer.valueOf(panel.getTxtCantidad().getText()));
+		pedido.insertarLinea(linea);
+		logica.setTemporal(pedido);
+		((DefaultTableModel) panel.getLineasPedido().getModel()).addRow(toObjectArray(linea));
+		this.paraUI.actualizarPrecioVentanaPedido(
+				Float.valueOf(this.paraUI.getPanelAltaPedido().getTxtPrecioFinal().getText())
+						+ articulo.getCurrentPrice());
 	}
 
 	public Object[] toObjectArray(Linea obj) {
