@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
+import modelo.data.Keyable;
+
 /**
  * 
  * @author Pablo
@@ -92,18 +94,33 @@ public class AlmacenCliente<T, K> {
 		boolean retorno = false;
 		if (indice.containsKey(k)) {
 			Integer posicion = indice.remove(k);
-			if (posicion != null) {
-				if (dao.grabar(pathIndice, (T) indice)) {
-					retorno = true;
-				}
-				// para que no elimine los datos, solo el indice, quitamos la linea de abajo
-				// retorno=dao.borrarElemtento(pathDatos,posicion);
-				if (!retorno) {
+			if(posicion!=null){
+				retorno=dao.borrarElemento(pathDatos,posicion);
+				if(!retorno){
 					leerIndice();
+				}else{
+					recargaIndice();
+					dao.grabar(pathIndice, (T) indice);
 				}
 			}
 		}
 		return retorno;
+	}
+	
+	
+	
+	private void recargaIndice() {
+		indice=new TreeMap<>();
+		int posicion=0;
+		T t=(T) dao.leer(pathDatos, posicion);
+		while (t!=null){
+			Keyable<K> elemento=(Keyable<K>) t;
+			K k=elemento.getKey();
+			indice.put(k, posicion);
+			posicion++;
+			t=(T) dao.leer(pathDatos, posicion);
+		}
+		
 	}
 
 	/**

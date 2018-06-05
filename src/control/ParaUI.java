@@ -181,7 +181,7 @@ public class ParaUI extends UI {
 	}
 
 	/**
-	 * modifica el precio del articulo elegido en el combo
+	 * modifica el precio del articulo elegido en el combo, hola, hola2, hola3
 	 * 
 	 * @param nuevoPrecio
 	 * @param object
