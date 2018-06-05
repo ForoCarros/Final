@@ -123,7 +123,7 @@ public class DAO<T> {
 		file.delete();
 	}
 
-	public boolean borrarElemtento(String pathDatos, Integer posicion) {
+	public boolean borrarElemento(String pathDatos, Integer posicion) {
 		int i = 0;
 		boolean retorno=true;
 		T t = leer(pathDatos, i);
