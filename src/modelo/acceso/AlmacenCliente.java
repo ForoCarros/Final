@@ -82,6 +82,7 @@ public class AlmacenCliente<T, K> {
 	 */
 	public boolean grabar(T t, K k) {
 		boolean retorno = false;
+		leerIndice();
 		Integer value = indice.size();
 		if (indice.put(k, value) == null) {
 			// si se almacena bien en el archivo de datos
