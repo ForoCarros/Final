@@ -24,35 +24,9 @@ public class AlmacenCliente<T, K> {
 		super();
 		this.pathIndice = ruta + "/clientes.index";
 		this.pathDatos = ruta + "/clientes.data";
-		//comprobarExistente(ruta);
 		assert validate();
 		this.indice = new TreeMap<>();
 		dao = new DAO<>();
-	}
-
-	private void comprobarExistente(String path) {
-		File ruta = new File(path);
-		File datos = new File(this.pathDatos);
-		File indices = new File(this.pathIndice);
-		if (!ruta.exists()) {
-			ruta.mkdirs();
-		}
-		if (!datos.exists()) {
-			try {
-				datos.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		if (!indices.exists()) {
-			try {
-				indices.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
 	}
 
 	private boolean validate() {
