@@ -62,15 +62,14 @@ public class Logica {
 		return new AlmacenPedido().grabar(pedido);
 	}
 
-	
 	public Articulo buscarArticulo(String nombre) {
-		return (Articulo)this.almacenArticulo.leer(nombre);
+		return (Articulo) this.almacenArticulo.leer(nombre);
 	}
-	
+
 	public Cliente buscarCliente(String dni) {
-		return (Cliente)this.almacenCliente.obtener(dni);
+		return (Cliente) this.almacenCliente.obtener(dni);
 	}
-	
+
 	/**
 	 * Retorna el número de pedido que corresponde.
 	 * 
@@ -100,22 +99,22 @@ public class Logica {
 	 * @return true o false
 	 */
 	public boolean eliminarCliente(Object cliente) {
-		boolean retorno=false;
+		boolean retorno = false;
 		TreeMap indice = (TreeMap) new AlmacenCliente<>("./data/clientes").getIndice();
-		if (!(indice == null)) {
+		if (indice != null) {
 			Set clave = indice.keySet();
 			for (Object clienteClave : clave) {
 				System.out.println(clienteClave);
-				if(clienteClave.toString().equals(cliente)) {
+				if (clienteClave.toString().equals(cliente)) {
 					System.out.println("encontrado");
 					return almacenCliente.borrar(clienteClave);
-					//return true;
+					// return true;
 				}
 			}
 		}
 		return retorno;
 	}
-	
+
 	public Pedido getTemporal() {
 		return this.temporal;
 	}

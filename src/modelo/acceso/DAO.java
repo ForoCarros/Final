@@ -110,8 +110,8 @@ public class DAO<T> {
 		protected void writeStreamHeader() throws IOException {
 			// Este es el que escribe la cabecera
 			/*
-			 * La solucion pasa por eliminar la escritura de la cabecera para
-			 * objetos de mi tipo
+			 * La solucion pasa por eliminar la escritura de la cabecera para objetos de mi
+			 * tipo
 			 */
 			// super.writeStreamHeader();
 			// System.out.println("soy la otra");
@@ -125,19 +125,19 @@ public class DAO<T> {
 
 	public boolean borrarElemento(String pathDatos, Integer posicion) {
 		int i = 0;
-		boolean retorno=true;
+		boolean retorno = true;
 		T t = leer(pathDatos, i);
 		while (t != null) {
 			if (i != posicion) {
 				grabar("copia", t, true);
 			}
 			i++;
-			t = leer(pathDatos, 0);
+			t = leer(pathDatos, i);
 		}
-		File original=new File(pathDatos);
-		File copia=new File("copia");
-		if(original.delete()&&copia.renameTo(original)){
-			retorno=false;
+		File original = new File(pathDatos);
+		File copia = new File("copia");
+		if (original.delete() || !copia.renameTo(original)) {
+			retorno = false;
 		}
 		return retorno;
 	}
