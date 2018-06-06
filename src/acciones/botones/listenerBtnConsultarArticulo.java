@@ -20,6 +20,7 @@ public class listenerBtnConsultarArticulo implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		ConsultaArticulo ventana = this.paraUI.getPanelConsultarArticulo();
+		String nombreArticulo = (String) ventana.getComboArticulos().getSelectedItem();
 		Articulo articulo = this.paraUI.getLogica().buscarArticulo(nombreArticulo);
 		if (articulo != null) {
 			ventana.getTxtDescripcion().setText(articulo.getDescripcion());
