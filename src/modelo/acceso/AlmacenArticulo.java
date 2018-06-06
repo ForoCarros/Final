@@ -17,15 +17,15 @@ import utiles.Rutas;
 public class AlmacenArticulo<T, K> {
 
 	private String pathIndice;
-	private StringBuilder pathDatos;
+	private String pathDatos;
 	private TreeMap<K, Integer> indice;
 	private DAO<T> dao;
 
 	public AlmacenArticulo(String ruta) {
 		super();
 		this.pathIndice = ruta + "/articulo.data";
-		this.pathDatos = new StringBuilder(ruta);
-		File file = new File(pathDatos.toString());
+		this.pathDatos = ruta;
+		File file = new File(pathDatos);
 		if (!file.exists()) {
 			file.mkdirs();
 		}
@@ -60,7 +60,7 @@ public class AlmacenArticulo<T, K> {
 			return null;
 		}
 	}
-	
+
 	public T leer(String nombre) {
 		System.out.println("estoy en almacen leer");
 		T retorno = null;
@@ -68,23 +68,19 @@ public class AlmacenArticulo<T, K> {
 			indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
 			Integer posicion = indice.get(nombre);
 			if (posicion != null) {
-				pathDatos.append(posicion + ".art");
-				retorno = (T) new DAO().leer(pathDatos.toString());
+				retorno = (T) new DAO().leer(this.pathDatos + "/" + posicion + ".art");
 			}
 		}
 		return retorno;
 	}
-	
-	
 
 	public boolean grabar(T t, Integer numero, String nombre) {
 		System.out.println("estoy en almacen grabar");
 		boolean retorno = false;
-		this.pathDatos.append("/" + numero + ".art");
 		if (comprobarExiste(pathIndice)) {
 			indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
 		}
-		boolean grabar = new DAO<>().grabar(pathDatos.toString(), t);
+		boolean grabar = new DAO<>().grabar(this.pathDatos + "/" + numero + ".art", t);
 		if (grabar) {
 			indice.put((K) nombre, numero);
 			retorno = new DAO<>().grabar(this.pathIndice, this.indice);
