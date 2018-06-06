@@ -15,12 +15,6 @@ public class Busquedas {
 		this.paraui = paraui;
 	}
 	
-	
-	/**
-	 * hay que crear la sobrecarga de todo
-	 */
-	
-	
 	public Articulo buscarArticulo(String nombre) {
 		return this.paraui.getLogica().buscarArticulo(nombre);
 	}
