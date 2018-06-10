@@ -108,7 +108,6 @@ public class Logica {
 				if (clienteClave.toString().equals(cliente)) {
 					System.out.println("encontrado");
 					return almacenCliente.borrar(clienteClave);
-					// return true;
 				}
 			}
 		}
