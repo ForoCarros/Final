@@ -147,7 +147,6 @@ public class ParaUI extends UI {
 		comboArticulos.removeAllItems();
 		TreeMap indice = (TreeMap) new AlmacenArticulo<>("./data/articulos").getIndice();
 		if (!(indice == null)) {
-			// Creia que seria un SortedSet... pero me obliga al Set
 			Set clave = indice.keySet();
 			for (Object articulo : clave) {
 				comboArticulos.addItem(articulo);
@@ -169,10 +168,6 @@ public class ParaUI extends UI {
 			Set clave = indice.keySet();
 			for (Object clienteClave : clave) {
 				comboClientes.addItem(clienteClave);
-				
-				// podria ser asi pero no....peta todo
-//				Cliente cliente = (Cliente) new AlmacenCliente<>("./data/clientes").obtener(clienteClave);
-//				comboClientes.addItem(cliente.getDniCif());
 			}
 		} else {
 			System.out.println("combo nulo");

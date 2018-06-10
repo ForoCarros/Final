@@ -117,26 +117,37 @@ public class DAO<T> {
 			// System.out.println("soy la otra");
 		}
 	}
-
-	public void borrar(String rutaarchivo) {
+	
+	public boolean borrar(String rutaarchivo) {
 		File file = new File(rutaarchivo);
-		file.delete();
+		boolean retorno=false;
+		if(file.exists())
+			retorno=file.delete();
+		return retorno;
 	}
-
+	
 	public boolean borrarElemento(String pathDatos, Integer posicion) {
 		int i = 0;
 		boolean retorno = true;
 		T t = leer(pathDatos, i);
 		while (t != null) {
 			if (i != posicion) {
-				grabar("./data/clientes/copia.data", t, true);
+				grabar("copia", t, true);
 			}
 			i++;
 			t = leer(pathDatos, i);
 		}
 		File original = new File(pathDatos);
-		File copia = new File("./data/clientes/copia.data");
-		if (original.delete() || !copia.renameTo(original)) {
+		File copia = new File("copia");
+		if(!copia.exists()){
+			try {
+				copia.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if (!original.delete() || !copia.renameTo(original)) {
 			retorno = false;
 		}
 		return retorno;

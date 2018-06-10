@@ -22,9 +22,5 @@ public class Busquedas {
 	public Cliente buscarCliente(String dni) {
 		return this.paraui.getLogica().buscarCliente(dni);
 	}
-	
-	public void buscarPedido() {
-		
-	}
 
 }
